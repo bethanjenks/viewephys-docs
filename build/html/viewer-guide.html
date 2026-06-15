@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Python Usage" href="python-usage.html"><link rel="prev" title="Quickstart" href="quickstart.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Using viewephys from Python" href="using-viewephys-from-python.html"><link rel="prev" title="Quickstart" href="quickstart.html">
 
     <!-- Generated with Sphinx 9.0.4 and Furo 2025.12.19 -->
         <title>Viewer Guide - viewephys 1.0 documentation</title>
@@ -172,7 +172,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
@@ -196,7 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Viewer Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-usage.html">Python Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-viewephys-from-python.html">Using viewephys from Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
@@ -231,13 +231,76 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
           <section id="viewer-guide">
 <h1>Viewer Guide<a class="headerlink" href="#viewer-guide" title="Link to this heading">¶</a></h1>
+<section id="interface-overview">
+<h2>Interface Overview<a class="headerlink" href="#interface-overview" title="Link to this heading">¶</a></h2>
+<p>The main viewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.</p>
+<p><img alt="Main viewer window" src="images/main_viewer.png" /></p>
+<section id="main-components">
+<h3>Main Components<a class="headerlink" href="#main-components" title="Link to this heading">¶</a></h3>
+<p>The interface consists of:</p>
+<ul class="simple">
+<li><p><strong>Menu bar</strong> – Open recordings and access viewer functions.</p></li>
+<li><p><strong>Display controls</strong> – Switch between available visualization modes.</p></li>
+<li><p><strong>Gain controls</strong> – Adjust signal scaling.</p></li>
+<li><p><strong>Signal display</strong> – View neural activity across channels and time.</p></li>
+<li><p><strong>Navigation controls</strong> – Move through the recording and explore different channel ranges.</p></li>
+</ul>
+</section>
+</section>
+<section id="signal-display">
+<h2>Signal Display<a class="headerlink" href="#signal-display" title="Link to this heading">¶</a></h2>
+<p>The central panel displays electrophysiology data across channels and time.</p>
+<ul class="simple">
+<li><p>The x-axis shows time.</p></li>
+<li><p>The y-axis shows recording channels.</p></li>
+<li><p>Signal intensity is represented by the grayscale display.</p></li>
+</ul>
+</section>
+<section id="navigation">
+<h2>Navigation<a class="headerlink" href="#navigation" title="Link to this heading">¶</a></h2>
+<p>The viewer provides controls for exploring recordings over time and across channels.</p>
+<p>Common tasks include:</p>
+<ul class="simple">
+<li><p>Moving forward and backward through a recording</p></li>
+<li><p>Inspecting groups of channels</p></li>
+<li><p>Adjusting the signal gain</p></li>
+<li><p>Examining potential noise sources or recording artefacts</p></li>
+</ul>
+</section>
+<section id="spike-picking-mode">
+<h2>Spike Picking Mode<a class="headerlink" href="#spike-picking-mode" title="Link to this heading">¶</a></h2>
+<p>Spike picking mode can be enabled from the Pick menu.
+When spike picking mode is active:</p>
+<ul class="simple">
+<li><p>Left click – Add a spike marker</p></li>
+<li><p>Shift + Left click – Remove a spike marker</p></li>
+<li><p>Ctrl + Left click – Add a spike marker without wrapping around the maximum</p></li>
+<li><p>Space – Increment the spike group number</p></li>
+</ul>
+</section>
+<section id="label-channels">
+<h2>Label channels<a class="headerlink" href="#label-channels" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+
+## Display Controls
+View colormaps 
+
+## Keyboard Shortcuts
+
+- `Ctrl + A` – Increase gain by 3 dB
+- `Ctrl + Z` – Decrease gain by 3 dB
+- `Ctrl + P` – Link displays in multi-window mode
+
+</pre></div>
+</div>
+</section>
 </section>
 
         </article>
@@ -245,12 +308,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="python-usage.html">
+          <a class="next-page" href="using-viewephys-from-python.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Python Usage</div>
+                <div class="title">Using viewephys from Python</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -283,8 +346,34 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Viewer Guide</a><ul>
+<li><a class="reference internal" href="#interface-overview">Interface Overview</a><ul>
+<li><a class="reference internal" href="#main-components">Main Components</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#signal-display">Signal Display</a></li>
+<li><a class="reference internal" href="#navigation">Navigation</a></li>
+<li><a class="reference internal" href="#spike-picking-mode">Spike Picking Mode</a></li>
+<li><a class="reference internal" href="#label-channels">Label channels</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

@@ -1,1 +1,61 @@
 # Viewer Guide
+
+## Interface Overview
+
+The main viewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.
+
+![Main viewer window](images/main_viewer.png)
+
+### Main Components
+
+The interface consists of:
+
+- **Menu bar** – Open recordings and access viewer functions.
+- **Display controls** – Switch between available visualization modes.
+- **Gain controls** – Adjust signal scaling.
+- **Signal display** – View neural activity across channels and time.
+- **Navigation controls** – Move through the recording and explore different channel ranges.
+
+## Signal Display
+
+The central panel displays electrophysiology data across channels and time.
+
+- The x-axis shows time.
+- The y-axis shows recording channels.
+- Signal intensity is represented by the grayscale display.
+
+## Navigation
+
+The viewer provides controls for exploring recordings over time and across channels.
+
+Common tasks include:
+
+- Moving forward and backward through a recording
+- Inspecting groups of channels
+- Adjusting the signal gain
+- Examining potential noise sources or recording artefacts
+
+## Spike Picking Mode
+
+Spike picking mode can be enabled from the Pick menu.
+When spike picking mode is active:
+
+- Left click – Add a spike marker
+- Shift + Left click – Remove a spike marker
+- Ctrl + Left click – Add a spike marker without wrapping around the maximum
+- Space – Increment the spike group number 
+
+## Label channels 
+
+```
+
+
+## Display Controls
+View colormaps 
+
+## Keyboard Shortcuts
+
+- `Ctrl + A` – Increase gain by 3 dB
+- `Ctrl + Z` – Decrease gain by 3 dB
+- `Ctrl + P` – Link displays in multi-window mode
+
