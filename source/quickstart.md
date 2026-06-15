@@ -84,3 +84,11 @@ For example:
 - NumPy arrays
 
 See **Using viewephys from Python** for complete examples.
+
+## Next Steps
+
+Now that you have opened a recording, see the following guides:
+
+- **Viewer Guide** – Learn how to navigate the interface and inspect recordings.
+- **Using viewephys from Python** – Launch viewephys programmatically and visualize processed data.
+- **Troubleshooting** – Common installation and usage issues.
