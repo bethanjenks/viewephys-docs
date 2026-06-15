@@ -19,9 +19,4 @@ A lightweight viewer for electrophysiology recordings.
    using-viewephys-from-python
    troubleshooting
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
