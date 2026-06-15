@@ -9,7 +9,7 @@ Before installing viewephys, ensure you have:
 
 > **Note:** Installing with Python versions earlier than 3.10 may result in installation errors.
 
-## 1. Create a Virtual Environment (recommended)
+## 1. Create a Virtual Environment
 
 It is recommended to install viewephys in a virtual environment to avoid conflicts with other Python packages.
 

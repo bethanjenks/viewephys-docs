@@ -1,12 +1,15 @@
 # Quickstart
 
-## Getting started
-
 viewephys can be used in three common workflows:
 
 1. Open an existing recording to inspect previously acquired data.
 2. Monitor a live recording during data acquisition.
 3. Visualize data directly from Python.
+
+The first two workflows are covered in this guide. For Python-based workflows, see **Using viewephys from Python**.
+
+
+> **Note:** If you installed viewephys in a virtual environment, ensure it is activated before running any of the commands below.
 
 ## Open an Existing Recording
 
@@ -19,9 +22,7 @@ Recordings can be loaded either:
 
 ### Open from the Graphical Interface
 
-If you installed viewephys in a virtual environment as recommended, activate that environment before launching the viewer.
-
-Start the viewer:
+Launch the viewer:
 
 ```bash
 viewephys
@@ -55,7 +56,7 @@ The recording will be loaded automatically when the viewer starts.
 
 viewephys can also be used during data acquisition to monitor signal quality in real time.
 
-1. Launch the viewer:
+Launch the viewer:
 
 ```bash
 viewephys
@@ -73,17 +74,6 @@ Common uses include:
 - Verifying probe connectivity
 - Checking recording stability
 
-## Visualize Data from Python
-
-viewephys can also display data that has already been loaded or processed in Python.
-
-For example:
-
-- Filtered recordings
-- SpikeInterface outputs
-- NumPy arrays
-
-See **Using viewephys from Python** for complete examples.
 
 ## Next Steps
 
@@ -92,3 +82,4 @@ Now that you have opened a recording, see the following guides:
 - **Viewer Guide** – Learn how to navigate the interface and inspect recordings.
 - **Using viewephys from Python** – Launch viewephys programmatically and visualize processed data.
 - **Troubleshooting** – Common installation and usage issues.
+
