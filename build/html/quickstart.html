@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Viewer Guide" href="viewer-guide.html"><link rel="prev" title="Installation" href="installation.html">
 
     <!-- Generated with Sphinx 9.0.4 and Furo 2025.12.19 -->
-        <title>Quickstart - viewephys 1.0 documentation</title>
+        <title>Quickstart Guide - viewephys 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
@@ -172,7 +172,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
@@ -194,9 +194,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Quickstart</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Quickstart Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="viewer-guide.html">Viewer Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-usage.html">Python Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-viewephys-from-python.html">Using viewephys from Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
@@ -231,13 +231,80 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="quickstart">
-<h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">¶</a></h1>
+          <section id="quickstart-guide">
+<h1>Quickstart Guide<a class="headerlink" href="#quickstart-guide" title="Link to this heading">¶</a></h1>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h2>
+<p>viewephys can be used in two common workflows:</p>
+<ol class="arabic simple">
+<li><p>Open an existing recording to inspect previously acquired data.</p></li>
+<li><p>Monitor a live recording during data acquisition.</p></li>
+</ol>
+<p>This guide focuses on opening and navigating recordings in the graphical viewer.</p>
+</section>
+<section id="open-an-existing-recording">
+<h2>Open an Existing Recording<a class="headerlink" href="#open-an-existing-recording" title="Link to this heading">¶</a></h2>
+<p>Use viewephys to explore previously acquired electrophysiology recordings.</p>
+<p>Recordings can be loaded either:</p>
+<ul class="simple">
+<li><p>From the graphical interface</p></li>
+<li><p>Directly from the command line</p></li>
+</ul>
+<section id="open-from-the-graphical-interface">
+<h3>Open from the Graphical Interface<a class="headerlink" href="#open-from-the-graphical-interface" title="Link to this heading">¶</a></h3>
+<p>If you installed viewephys in a virtual environment as recommended, activate that environment before launching the viewer.</p>
+<p>Start the viewer:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys
+</pre></div>
+</div>
+<p>The Ephys Bin Viewer window will open.</p>
+<p>To load a recording:</p>
+<ol class="arabic simple">
+<li><p>Select <strong>File → Open</strong>.</p></li>
+<li><p>Navigate to the desired binary recording (<code class="docutils literal notranslate"><span class="pre">.bin</span></code> file).</p></li>
+<li><p>Open the file.</p></li>
+</ol>
+</section>
+<section id="open-from-the-command-line">
+<h3>Open from the Command Line<a class="headerlink" href="#open-from-the-command-line" title="Link to this heading">¶</a></h3>
+<p>You can also load a specific recording directly when launching viewephys:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys<span class="w"> </span>-f<span class="w"> </span>path/to/recording.ap.bin
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys<span class="w"> </span>-f<span class="w"> </span>examples/example_bin/1119617_LSE1_shank12_g0_t0.imec0.ap.bin
+</pre></div>
+</div>
+<p>The recording will be loaded automatically when the viewer starts.</p>
+</section>
+</section>
+<section id="monitor-a-live-recording">
+<h2>Monitor a Live Recording<a class="headerlink" href="#monitor-a-live-recording" title="Link to this heading">¶</a></h2>
+<p>viewephys can also be used during data acquisition to monitor signal quality in real time.</p>
+<ol class="arabic simple">
+<li><p>Launch the viewer:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Select <strong>File → Open Live Recording</strong>.</p></li>
+<li><p>Navigate to the desired recording and select the corresponding <code class="docutils literal notranslate"><span class="pre">.bin</span></code> file.</p></li>
+</ol>
+<p>The live recording mode can be used to inspect data during acquisition.</p>
+<p>Common uses include:</p>
+<ul class="simple">
+<li><p>Monitoring signal quality during acquisition</p></li>
+<li><p>Identifying noisy channels</p></li>
+<li><p>Verifying probe connectivity</p></li>
+<li><p>Checking recording stability</p></li>
+</ul>
+</section>
 </section>
 
         </article>
@@ -283,8 +350,33 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Quickstart Guide</a><ul>
+<li><a class="reference internal" href="#getting-started">Getting started</a></li>
+<li><a class="reference internal" href="#open-an-existing-recording">Open an Existing Recording</a><ul>
+<li><a class="reference internal" href="#open-from-the-graphical-interface">Open from the Graphical Interface</a></li>
+<li><a class="reference internal" href="#open-from-the-command-line">Open from the Command Line</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#monitor-a-live-recording">Monitor a Live Recording</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
