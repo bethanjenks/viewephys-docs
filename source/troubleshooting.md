@@ -1,5 +1,18 @@
 # Troubleshooting
 
+If you encounter problems while installing or using viewephys, the following sections describe common issues and their solutions.
+
+**Getting Help**
+
+If your issue is not covered here, you can:
+
+- Search existing issues on the viewephys GitHub repository.
+- Report a bug or request a feature by opening a new issue.
+
+GitHub repository:
+[viewephys repository](https://github.com/int-brain-lab/viewephys)
+
+## Common Issues 
 **Viewer Does Not Launch**
 
 If `viewephys` does not start:
@@ -75,6 +88,6 @@ transpose the array before displaying it:
 data = data.T
 ```
 
-*** Need More Help?***
+**Need More Help?**
 
 If you encounter an issue that is not covered here, check the viewephys [Git repository](https://github.com/int-brain-lab/viewephys) for updates and open issues. 

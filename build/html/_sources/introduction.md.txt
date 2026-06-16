@@ -6,7 +6,7 @@ The viewer is designed for fast, interactive exploration of neural recordings, a
 
 Unlike analysis-focused tools, viewephys focuses on rapid visualization and data inspection.
 
-## Intended Audience
+**Intended Audience**
 
 viewephys is intended for users working with electrophysiology data, including:
 
@@ -15,7 +15,7 @@ viewephys is intended for users working with electrophysiology data, including:
 - Data analysts and engineers
 - Users working with Neuropixels recordings
 
-## Use cases 
+**Use Cases** 
 
 Raw electrophysiology recordings can be difficult to inspect because:
 
@@ -31,7 +31,7 @@ viewephys provides:
 - Immediate feedback on recording quality
 - Support for viewing data directly from Python
 
-## Key Features
+**Key Features**
 
 viewephys supports several common workflows:
 
@@ -39,7 +39,7 @@ viewephys supports several common workflows:
 - Monitor recordings during data acquisition
 - Visualize NumPy arrays and processed data from Python
 
-## Documentation Overview
+**Documentation Overview**
 
 This documentation covers:
 

@@ -238,7 +238,16 @@
         <article role="main" id="furo-main-content">
           <section id="troubleshooting">
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h1>
-<p><em><strong>Viewer Does Not Launch</strong></em></p>
+<p>If you encounter problems while installing or using viewephys, the following sections describe common issues and their solutions.</p>
+<p><strong>Getting Help</strong></p>
+<p>If your issue is not covered here, you can:</p>
+<ul class="simple">
+<li><p>Search existing issues on the viewephys GitHub repository.</p></li>
+<li><p>Report a bug or request a feature by opening a new issue.</p></li>
+</ul>
+<p>GitHub repository:
+<a class="reference external" href="https://github.com/int-brain-lab/viewephys">viewephys repository</a></p>
+<p><strong>Viewer Does Not Launch</strong></p>
 <p>If <code class="docutils literal notranslate"><span class="pre">viewephys</span></code> does not start:</p>
 <ul class="simple">
 <li><p>Verify that the package is installed correctly.</p></li>
@@ -249,7 +258,7 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys<span class="w"> </span>--help
 </pre></div>
 </div>
-<p><em><strong>Command Not Found</strong></em></p>
+<p><strong>Command Not Found</strong></p>
 <p>If your terminal reports:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>viewephys: command not found
 </pre></div>
@@ -263,14 +272,14 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>show<span class="w"> </span>viewephys
 </pre></div>
 </div>
-<p><em><strong>File Not Found</strong></em></p>
+<p><strong>File Not Found</strong></p>
 <p>If a recording cannot be opened:</p>
 <ul class="simple">
 <li><p>Verify that the file path is correct.</p></li>
 <li><p>Check that the recording file exists.</p></li>
 <li><p>Ensure you have permission to access the file.</p></li>
 </ul>
-<p><em><strong>Python Viewer Does Not Appear</strong></em></p>
+<p><strong>Python Viewer Does Not Appear</strong></p>
 <p>When launching viewephys from a Python script, make sure a Qt application is created before opening the viewer:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">viewephys.gui</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_app</span>
 
@@ -281,7 +290,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><em><strong>Unexpected Data Orientation</strong></em></p>
+<p><strong>Unexpected Data Orientation</strong></p>
 <p>When displaying NumPy arrays, data should be arranged as:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>channels x timepoints
 </pre></div>
@@ -294,7 +303,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span>
 </pre></div>
 </div>
-<p>*** Need More Help?***</p>
+<p><strong>Need More Help?</strong></p>
 <p>If you encounter an issue that is not covered here, check the viewephys <a class="reference external" href="https://github.com/int-brain-lab/viewephys">Git repository</a> for updates and open issues.</p>
 </section>
 
