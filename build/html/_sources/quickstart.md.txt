@@ -35,6 +35,8 @@ To load a recording:
 2. Navigate to the desired binary recording (`.bin` file).
 3. Open the file.
 
+![viewephys open recording](images/veiwephys_open_recording.png)
+
 ### Open from the Command Line
 
 You can also load a specific recording directly when launching viewephys:
@@ -73,12 +75,25 @@ Common uses include:
 - Verifying probe connectivity
 - Checking recording stability
 
+## Filtered Data Views
+viewephys allows you to select different filtered representations of the data.
 
-## Next Steps
+### Raw
+Display the unprocessed recording.
+
+### AP band (high-pass 300 Hz)
+Display the high-frequency component of the recording commonly used for spike detection and analysis.
+
+### LF broadband (high-pass 2 Hz)
+Display lower-frequency signals, including local field potential activity.
+
+### AP band Destriped
+Display the AP band after additional preprocessing to reduce recording artefacts and noise.
+
+**Next Steps**
 
 Now that you have opened a recording, see the following guides:
 
-- **Viewer Guide** – Learn how to navigate the interface and inspect recordings.
-- **Using viewephys from Python** – Launch viewephys programmatically and visualize processed data.
-- **Troubleshooting** – Common installation and usage issues.
+- [Viewer Guide](viewer-guide) – Learn how to navigate the interface and inspect recordings.
 
+- [Python API](python-api) – Learn how to open recordings and visualize data from Python.

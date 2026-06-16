@@ -21,7 +21,7 @@ The central panel displays electrophysiology data across channels and time.
 - The y-axis is channels.
 - Data are shown as a density map or traces.
 
-## Navigating the viewer
+## Navigating the Viewer
 
 The viewer provides several tools for exploring recordings across time and channels.
 
