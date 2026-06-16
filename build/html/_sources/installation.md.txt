@@ -1,13 +1,13 @@
 # Installation
 
-**Requirements**
+## Requirements
 
 Before installing viewephys, ensure you have:
 
 - Python 3.10 or later
 - A virtual environment (recommended)
 
-## 1. Create a Virtual Environment
+### 1. Create a Virtual Environment
 
 It is recommended to install viewephys in a virtual environment to avoid conflicts with other Python packages.
 
@@ -41,7 +41,7 @@ conda activate viewephys
 ```
 > **Note:** viewephys is also compatible with the standard IBL Python environment.
 
-## 2. Install viewephys
+### 2. Install viewephys
 
 ### Install from PyPI
 
@@ -73,7 +73,7 @@ pip install -e .
 
 The `-e` flag allows changes to the source code to be reflected immediately without reinstalling the package.
 
-## 3. Verify the Installation
+### 3. Verify the Installation
 
 Confirm that viewephys is available from the command line:
 

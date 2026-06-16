@@ -1,6 +1,6 @@
 # Installation
 
-**Requirements**
+## Requirements
 
 Before installing viewephys, ensure you have:
 
@@ -70,8 +70,6 @@ If you plan to modify the source code, install in editable mode:
 pip install -e .
 
 ```
-
-The `-e` flag allows changes to the source code to be reflected immediately without reinstalling the package.
 
 ### 3. Verify the Installation
 

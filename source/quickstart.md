@@ -6,7 +6,7 @@ viewephys can be used in three common workflows:
 2. Monitor a live recording during data acquisition.
 3. Visualize recordings and processed data from Python.
 
-The first two workflows are covered in this guide. For Python-based workflows, see **Python API**.
+The first two workflows are covered in this guide. For Python-based workflows, see [Python API](python-api). 
 
 > **Note:** If you installed viewephys in a virtual environment, ensure it is activated before running any of the commands below.
 
@@ -55,7 +55,7 @@ The recording will be loaded automatically when the viewer starts.
 
 ## Monitor a Live Recording
 
-viewephys can also be used during data acquisition to monitor signal quality in real time.
+viewephys can be used during data acquisition to monitor signal quality in real time.
 
 Launch the viewer:
 
@@ -65,6 +65,8 @@ viewephys
 
 1. Select **File → Open Live Recording**.
 2. Navigate to the desired recording and select the corresponding `.bin` file.
+
+![viewephys live recording](images/viewephys_open_live_recording.png)
 
 The live recording mode can be used to inspect data during acquisition.
 
@@ -90,7 +92,7 @@ Display lower-frequency signals, including local field potential activity.
 **AP band Destriped**
 Display the AP band after additional preprocessing to reduce recording artefacts and noise.
 
-**Next Steps**
+### Next Steps
 
 Now that you have opened a recording, see the following guides:
 
