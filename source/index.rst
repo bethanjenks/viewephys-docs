@@ -16,7 +16,7 @@ A lightweight viewer for electrophysiology recordings.
    installation
    quickstart
    viewer-guide
-   using-viewephys-from-python
+   python-api
    troubleshooting
 
 
