@@ -60,23 +60,6 @@ and that the event loop is started:
 app.exec()
 ```
 
-**Unexpected Data Orientation**
-
-When displaying NumPy arrays, data should be arranged as:
-
-```text
-channels x timepoints
-```
-If your data is arranged as:
-
-```text
-timepoints x channels
-```
-transpose the array before displaying it:
-
-```python
-data = data.T
-```
 ## Support
 
 If your issue is not covered here, you can:

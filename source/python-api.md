@@ -31,25 +31,6 @@ app.exec()
 
 Use `viewephys()` to display data that is already loaded in Python.
 
-The input data should be arranged as:
-
-```text
-channels x timepoints
-```
-
-Some libraries return data as:
-```text
-timepoints x channels
-```
-
-If needed, transpose the array before passing it to viewephys:
-
-```python
-data = data.T
-```
-
-Any NumPy array can be displayed, including filtered recordings, SpikeInterface outputs, and other processed data.
-
 ```python
 
 import numpy as np

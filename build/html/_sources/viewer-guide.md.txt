@@ -4,7 +4,7 @@
 
 The main viewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.
 
-Main viewer window
+![viewephys recording](images/viewephys_recording.png)
 
 The interface is divided into several key areas:
 
@@ -20,8 +20,6 @@ The central panel displays electrophysiology data across channels and time.
 - The x-axis is time.
 - The y-axis is channels.
 - Data are shown as a density map or traces.
-
-![viewephys recording](images/viewephys_recording.png)
 
 ## Navigating the Viewer
 
@@ -67,25 +65,11 @@ viewephys provides several options for adjusting how recordings are displayed.
 
 ### Density Mode
 
-Density mode displays the recording as a grayscale image, allowing rapid inspection of signal activity across all channels.
-
-This mode is useful for:
-
-- Identifying noisy channels
-- Detecting recording artefacts
-- Assessing overall recording quality
+Density mode displays signal amplitude as a 2D intensity map across channels and time.
 
 ### Wiggle Mode
 
-Wiggle mode displays individual traces as line plots.
-
-This mode is useful for:
-
-- Inspecting waveform shape
-- Examining activity on individual channels
-- Comparing neighbouring channels
-
-Use the Density and Wiggle controls to switch between display modes.
+Wiggle mode displays individual channels as trace plots, allowing detailed inspection of signal waveforms.
 
 ### Colour Maps
 
@@ -115,9 +99,10 @@ When spike picking mode is active:
 
 ### Context Menu Tools
 
-Additional analysis tools are available from the context menu within the signal display.
+Additional inspection tools are available from the context menu within the signal display. These tools can be accessed by right-clicking within the recording display.
+
 Available options include:
 
-- **View Trace** – Display the selected channel trace.
-- **View Spectrum** – Display the frequency spectrum of the selected channel.
-- **View Spectrogram** – Display a spectrogram of the selected channel.
+- **View Trace**
+- **View Spectrum**
+- **View Spectrogram**

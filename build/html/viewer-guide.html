@@ -241,7 +241,7 @@
 <section id="interface-overview">
 <h2>Interface Overview<a class="headerlink" href="#interface-overview" title="Link to this heading">¶</a></h2>
 <p>The main viewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.</p>
-<p>Main viewer window</p>
+<p><img alt="viewephys recording" src="_images/viewephys_recording.png" /></p>
 <p>The interface is divided into several key areas:</p>
 <ol class="arabic simple">
 <li><p><strong>Menu Bar</strong> – Access file operations, display options, and spike-picking tools.</p></li>
@@ -257,7 +257,6 @@
 <li><p>The y-axis is channels.</p></li>
 <li><p>Data are shown as a density map or traces.</p></li>
 </ul>
-<p><img alt="viewephys recording" src="_images/viewephys_recording.png" /></p>
 </section>
 <section id="navigating-the-viewer">
 <h2>Navigating the Viewer<a class="headerlink" href="#navigating-the-viewer" title="Link to this heading">¶</a></h2>
@@ -305,24 +304,11 @@
 <p>viewephys provides several options for adjusting how recordings are displayed.</p>
 <section id="density-mode">
 <h3>Density Mode<a class="headerlink" href="#density-mode" title="Link to this heading">¶</a></h3>
-<p>Density mode displays the recording as a grayscale image, allowing rapid inspection of signal activity across all channels.</p>
-<p>This mode is useful for:</p>
-<ul class="simple">
-<li><p>Identifying noisy channels</p></li>
-<li><p>Detecting recording artefacts</p></li>
-<li><p>Assessing overall recording quality</p></li>
-</ul>
+<p>Density mode displays signal amplitude as a 2D intensity map across channels and time.</p>
 </section>
 <section id="wiggle-mode">
 <h3>Wiggle Mode<a class="headerlink" href="#wiggle-mode" title="Link to this heading">¶</a></h3>
-<p>Wiggle mode displays individual traces as line plots.</p>
-<p>This mode is useful for:</p>
-<ul class="simple">
-<li><p>Inspecting waveform shape</p></li>
-<li><p>Examining activity on individual channels</p></li>
-<li><p>Comparing neighbouring channels</p></li>
-</ul>
-<p>Use the Density and Wiggle controls to switch between display modes.</p>
+<p>Wiggle mode displays individual channels as trace plots, allowing detailed inspection of signal waveforms.</p>
 </section>
 <section id="colour-maps">
 <h3>Colour Maps<a class="headerlink" href="#colour-maps" title="Link to this heading">¶</a></h3>
@@ -352,12 +338,12 @@ When spike picking mode is active:</p>
 </section>
 <section id="context-menu-tools">
 <h3>Context Menu Tools<a class="headerlink" href="#context-menu-tools" title="Link to this heading">¶</a></h3>
-<p>Additional analysis tools are available from the context menu within the signal display.
-Available options include:</p>
+<p>Additional inspection tools are available from the context menu within the signal display. These tools can be accessed by right-clicking within the recording display.</p>
+<p>Available options include:</p>
 <ul class="simple">
-<li><p><strong>View Trace</strong> – Display the selected channel trace.</p></li>
-<li><p><strong>View Spectrum</strong> – Display the frequency spectrum of the selected channel.</p></li>
-<li><p><strong>View Spectrogram</strong> – Display a spectrogram of the selected channel.</p></li>
+<li><p><strong>View Trace</strong></p></li>
+<li><p><strong>View Spectrum</strong></p></li>
+<li><p><strong>View Spectrogram</strong></p></li>
 </ul>
 </section>
 </section>

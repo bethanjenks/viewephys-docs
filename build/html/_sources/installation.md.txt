@@ -71,8 +71,6 @@ pip install -e .
 
 ```
 
-The `-e` flag allows changes to the source code to be reflected immediately without reinstalling the package.
-
 ### 3. Verify the Installation
 
 Confirm that viewephys is available from the command line:
