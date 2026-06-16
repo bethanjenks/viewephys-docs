@@ -1,6 +1,6 @@
 # Installation
 
-### Requirements
+**Requirements**
 
 Before installing viewephys, ensure you have:
 

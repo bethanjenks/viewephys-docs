@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="prev" title="Python Usage" href="python-usage.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="prev" title="Python API" href="python-api.html">
 
     <!-- Generated with Sphinx 9.0.4 and Furo 2025.12.19 -->
         <title>Troubleshooting - viewephys 1.0 documentation</title>
@@ -196,7 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="viewer-guide.html">Viewer Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-usage.html">Python Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-api.html">Python API</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Troubleshooting</a></li>
 </ul>
 
@@ -238,6 +238,64 @@
         <article role="main" id="furo-main-content">
           <section id="troubleshooting">
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h1>
+<p><em><strong>Viewer Does Not Launch</strong></em></p>
+<p>If <code class="docutils literal notranslate"><span class="pre">viewephys</span></code> does not start:</p>
+<ul class="simple">
+<li><p>Verify that the package is installed correctly.</p></li>
+<li><p>Ensure you are working in the correct Python environment.</p></li>
+<li><p>Check that all dependencies were installed successfully.</p></li>
+</ul>
+<p>Try confirming the installation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys<span class="w"> </span>--help
+</pre></div>
+</div>
+<p><em><strong>Command Not Found</strong></em></p>
+<p>If your terminal reports:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>viewephys: command not found
+</pre></div>
+</div>
+<p>make sure:</p>
+<ul class="simple">
+<li><p>The environment containing viewephys is activated.</p></li>
+<li><p>The installation completed successfully.</p></li>
+</ul>
+<p>You can verify the installation with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>show<span class="w"> </span>viewephys
+</pre></div>
+</div>
+<p><em><strong>File Not Found</strong></em></p>
+<p>If a recording cannot be opened:</p>
+<ul class="simple">
+<li><p>Verify that the file path is correct.</p></li>
+<li><p>Check that the recording file exists.</p></li>
+<li><p>Ensure you have permission to access the file.</p></li>
+</ul>
+<p><em><strong>Python Viewer Does Not Appear</strong></em></p>
+<p>When launching viewephys from a Python script, make sure a Qt application is created before opening the viewer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">viewephys.gui</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_app</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">create_app</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>and that the event loop is started:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><em><strong>Unexpected Data Orientation</strong></em></p>
+<p>When displaying NumPy arrays, data should be arranged as:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>channels x timepoints
+</pre></div>
+</div>
+<p>If your data is arranged as:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>timepoints x channels
+</pre></div>
+</div>
+<p>transpose the array before displaying it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+<p>*** Need More Help?***</p>
+<p>If you encounter an issue that is not covered here, check the viewephys <a class="reference external" href="https://github.com/int-brain-lab/viewephys">Git repository</a> for updates and open issues.</p>
 </section>
 
         </article>
@@ -246,14 +304,14 @@
         
         <div class="related-pages">
           
-          <a class="prev-page" href="python-usage.html">
+          <a class="prev-page" href="python-api.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Python Usage</div>
+                <div class="title">Python API</div>
                 
               </div>
             </a>

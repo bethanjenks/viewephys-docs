@@ -1,6 +1,6 @@
 # Troubleshooting
 
-### Viewer Does Not Launch
+**Viewer Does Not Launch**
 
 If `viewephys` does not start:
 
@@ -14,7 +14,7 @@ Try confirming the installation:
 viewephys --help
 ```
 
-### Command Not Found
+**Command Not Found**
 
 If your terminal reports:
 
@@ -33,7 +33,7 @@ You can verify the installation with:
 pip show viewephys
 ```
 
-### File Not Found
+**File Not Found**
 
 If a recording cannot be opened:
 
@@ -41,7 +41,7 @@ If a recording cannot be opened:
 - Check that the recording file exists.
 - Ensure you have permission to access the file.
 
-### Python Viewer Does Not Appear
+**Python Viewer Does Not Appear**
 
 When launching viewephys from a Python script, make sure a Qt application is created before opening the viewer:
 
@@ -57,7 +57,7 @@ and that the event loop is started:
 app.exec()
 ```
 
-### Unexpected Data Orientation
+**Unexpected Data Orientation**
 
 When displaying NumPy arrays, data should be arranged as:
 
@@ -75,6 +75,6 @@ transpose the array before displaying it:
 data = data.T
 ```
 
-## Need More Help?
+*** Need More Help?***
 
 If you encounter an issue that is not covered here, check the viewephys [Git repository](https://github.com/int-brain-lab/viewephys) for updates and open issues. 

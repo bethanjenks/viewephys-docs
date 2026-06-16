@@ -172,7 +172,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
@@ -196,7 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="viewer-guide.html">Viewer Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-usage.html">Python Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-api.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
@@ -231,13 +231,63 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
           <section id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h1>
+<p>viewephys is a lightweight Python tool developed by the International Brain Laboratory (IBL) for visualizing electrophysiology recordings, particularly Neuropixels data.</p>
+<p>The viewer is designed for fast, interactive exploration of neural recordings, allowing users to inspect signal quality, navigate across channels and time, and monitor recordings during acquisition.</p>
+<p>Unlike analysis-focused tools, viewephys focuses on rapid visualization and data inspection.</p>
+<section id="intended-audience">
+<h2>Intended Audience<a class="headerlink" href="#intended-audience" title="Link to this heading">¶</a></h2>
+<p>viewephys is intended for users working with electrophysiology data, including:</p>
+<ul class="simple">
+<li><p>Neuroscientists</p></li>
+<li><p>Electrophysiology researchers</p></li>
+<li><p>Data analysts and engineers</p></li>
+<li><p>Users working with Neuropixels recordings</p></li>
+</ul>
+</section>
+<section id="use-cases">
+<h2>Use cases<a class="headerlink" href="#use-cases" title="Link to this heading">¶</a></h2>
+<p>Raw electrophysiology recordings can be difficult to inspect because:</p>
+<ul class="simple">
+<li><p>Recording files are large and complex</p></li>
+<li><p>Raw voltage traces are not immediately interpretable</p></li>
+<li><p>Many visualization tools require substantial setup or processing</p></li>
+</ul>
+<p>viewephys provides:</p>
+<ul class="simple">
+<li><p>A quick way to open and visualize recordings</p></li>
+<li><p>Interactive navigation through channels and time</p></li>
+<li><p>Real-time monitoring of ongoing recordings</p></li>
+<li><p>Immediate feedback on recording quality</p></li>
+<li><p>Support for viewing data directly from Python</p></li>
+</ul>
+</section>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">¶</a></h2>
+<p>viewephys supports several common workflows:</p>
+<ul class="simple">
+<li><p>Open and inspect previously acquired recordings</p></li>
+<li><p>Monitor recordings during data acquisition</p></li>
+<li><p>Visualize NumPy arrays and processed data from Python</p></li>
+</ul>
+</section>
+<section id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Link to this heading">¶</a></h2>
+<p>This documentation covers:</p>
+<ul class="simple">
+<li><p>Installation</p></li>
+<li><p>Quickstart workflows</p></li>
+<li><p>Viewer navigation and display options</p></li>
+<li><p>Python API usage</p></li>
+<li><p>Troubleshooting common issues</p></li>
+</ul>
+</section>
 </section>
 
         </article>
@@ -283,8 +333,30 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Introduction</a><ul>
+<li><a class="reference internal" href="#intended-audience">Intended Audience</a></li>
+<li><a class="reference internal" href="#use-cases">Use cases</a></li>
+<li><a class="reference internal" href="#key-features">Key Features</a></li>
+<li><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

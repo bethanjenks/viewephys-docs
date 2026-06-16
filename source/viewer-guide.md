@@ -15,8 +15,6 @@ The interface is divided into several key areas:
 5. **Navigation Controls** – Scroll through time and channel ranges within the recording.
 6. **Status Information** – Displays information about the current cursor position, including channel number, time, amplitude, and channel metadata.
 
-## Viewing recordings
-
 The central panel displays electrophysiology data across channels and time.
 
 - The x-axis is time.
