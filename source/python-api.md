@@ -31,62 +31,58 @@ app.exec()
 
 Use `viewephys()` to display data that is already loaded in Python.
 
+The input data should be arranged as:
+
+```text
+channels x timepoints
+```
+
+Some libraries return data as:
+```text
+timepoints x channels
+```
+
+If needed, transpose the array before passing it to viewephys:
+
+```python
+data = data.T
+```
+
+Any NumPy array can be displayed, including filtered recordings, SpikeInterface outputs, and other processed data.
+
 ```python
 
 import numpy as np
-
 from viewephys.gui import viewephys, create_app
 
 app = create_app()
 
 nc, ns, fs = (384, 50000, 30000)
 data = np.random.randn(nc, ns) / 1e6
+
 viewer = viewephys(data, fs=fs)
 
 app.exec()
 
 ```
 
-## View Processed Data
+### Open Multiple Viewer Windows
 
-The array-based workflow is useful for displaying data after preprocessing.
-
-Examples include:
-
-- Filtered recordings
-- SpikeInterface outputs
-- Custom NumPy arrays
-
-For example:
+Multiple viewer windows can be opened from the same Python session, allowing different datasets or processing stages to be compared side by side.
 
 ```python
 
-viewer = viewephys(processed_data, fs=30000, title="Processed data")
+import numpy as np
+from viewephys.gui import viewephys, create_app
 
-```
+app = create_app()
 
-## Data Shape
+nc, ns, fs = (384, 50000, 30000)
+data = np.random.randn(nc, ns) / 1e6
 
-When passing an array to `viewephys()`, the data should be arranged as:
+viewer1 = viewephys(data, fs=fs)
+viewer2 = viewephys(data * 50, fs=fs, title="Plot 2")
 
-```text
-
-channels x timepoints
-
-```
-
-Some libraries return data as:
-
-```text
-
-timepoints x channels
-
-```
-
-If needed, transpose the array before passing it to viewephys:
-
-```python
-
-data = data.T
+app.exec()
 
 ```

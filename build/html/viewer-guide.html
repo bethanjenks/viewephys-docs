@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Using viewephys from Python" href="using-viewephys-from-python.html"><link rel="prev" title="Quickstart" href="quickstart.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Python API" href="python-api.html"><link rel="prev" title="Quickstart" href="quickstart.html">
 
     <!-- Generated with Sphinx 9.0.4 and Furo 2025.12.19 -->
         <title>Viewer Guide - viewephys 1.0 documentation</title>
@@ -196,7 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Viewer Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="using-viewephys-from-python.html">Using viewephys from Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-api.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
@@ -241,65 +241,127 @@
 <section id="interface-overview">
 <h2>Interface Overview<a class="headerlink" href="#interface-overview" title="Link to this heading">¶</a></h2>
 <p>The main viewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.</p>
-<p><img alt="Main viewer window" src="images/main_viewer.png" /></p>
-<section id="main-components">
-<h3>Main Components<a class="headerlink" href="#main-components" title="Link to this heading">¶</a></h3>
-<p>The interface consists of:</p>
-<ul class="simple">
-<li><p><strong>Menu bar</strong> – Open recordings and access viewer functions.</p></li>
-<li><p><strong>Display controls</strong> – Switch between available visualization modes.</p></li>
-<li><p><strong>Gain controls</strong> – Adjust signal scaling.</p></li>
-<li><p><strong>Signal display</strong> – View neural activity across channels and time.</p></li>
-<li><p><strong>Navigation controls</strong> – Move through the recording and explore different channel ranges.</p></li>
-</ul>
+<p>Main viewer window</p>
+<p>The interface is divided into several key areas:</p>
+<ol class="arabic simple">
+<li><p><strong>Menu Bar</strong> – Access file operations, display options, and spike-picking tools.</p></li>
+<li><p><strong>Display Controls</strong> – Select channel metadata and switch between Density and Wiggle display modes.</p></li>
+<li><p><strong>Gain Controls</strong> – Adjust the signal gain to improve visibility of recorded activity.</p></li>
+<li><p><strong>Signal Display</strong> – The main viewing area, showing electrophysiology data across channels and time.</p></li>
+<li><p><strong>Navigation Controls</strong> – Scroll through time and channel ranges within the recording.</p></li>
+<li><p><strong>Status Information</strong> – Displays information about the current cursor position, including channel number, time, amplitude, and channel metadata.</p></li>
+</ol>
 </section>
-</section>
-<section id="signal-display">
-<h2>Signal Display<a class="headerlink" href="#signal-display" title="Link to this heading">¶</a></h2>
+<section id="viewing-recordings">
+<h2>Viewing recordings<a class="headerlink" href="#viewing-recordings" title="Link to this heading">¶</a></h2>
 <p>The central panel displays electrophysiology data across channels and time.</p>
 <ul class="simple">
-<li><p>The x-axis shows time.</p></li>
-<li><p>The y-axis shows recording channels.</p></li>
-<li><p>Signal intensity is represented by the grayscale display.</p></li>
+<li><p>The x-axis is time.</p></li>
+<li><p>The y-axis is channels.</p></li>
+<li><p>Data are shown as a density map or traces.</p></li>
 </ul>
 </section>
-<section id="navigation">
-<h2>Navigation<a class="headerlink" href="#navigation" title="Link to this heading">¶</a></h2>
-<p>The viewer provides controls for exploring recordings over time and across channels.</p>
-<p>Common tasks include:</p>
+<section id="navigating-the-viewer">
+<h2>Navigating the viewer<a class="headerlink" href="#navigating-the-viewer" title="Link to this heading">¶</a></h2>
+<p>The viewer provides several tools for exploring recordings across time and channels.</p>
+<section id="navigation-controls">
+<h3>Navigation Controls<a class="headerlink" href="#navigation-controls" title="Link to this heading">¶</a></h3>
+<p>Use the horizontal and vertical scroll bars to move through the recording:</p>
 <ul class="simple">
-<li><p>Moving forward and backward through a recording</p></li>
-<li><p>Inspecting groups of channels</p></li>
-<li><p>Adjusting the signal gain</p></li>
-<li><p>Examining potential noise sources or recording artefacts</p></li>
+<li><p>The horizontal scroll bar moves forward and backward in time.</p></li>
+<li><p>The vertical scroll bar moves between channel ranges.</p></li>
 </ul>
 </section>
+<section id="adjusting-signal-gain">
+<h3>Adjusting Signal Gain<a class="headerlink" href="#adjusting-signal-gain" title="Link to this heading">¶</a></h3>
+<p>The gain control can be used to increase or decrease signal visibility.</p>
+<p>Gain can be adjusted using:</p>
+<ul class="simple">
+<li><p>The gain control in the viewer</p></li>
+<li><p>Ctrl + A or Page Up to increase gain by 3 dB</p></li>
+<li><p>Ctrl + Z or Page Down to decrease gain by 3 dB</p></li>
+</ul>
+</section>
+<section id="keyboard-navigation">
+<h3>Keyboard Navigation<a class="headerlink" href="#keyboard-navigation" title="Link to this heading">¶</a></h3>
+<p>The arrow keys can be used to navigate recordings:</p>
+<ul class="simple">
+<li><p>← and → move backward and forward through time</p></li>
+<li><p>↑ and ↓ move between channel ranges</p></li>
+<li><p>Hold Ctrl while using the arrow keys to move in larger steps</p></li>
+</ul>
+</section>
+<section id="cursor-information">
+<h3>Cursor Information<a class="headerlink" href="#cursor-information" title="Link to this heading">¶</a></h3>
+<p>Moving the cursor over the signal display updates the information panel with:</p>
+<ul class="simple">
+<li><p>Channel number</p></li>
+<li><p>Time</p></li>
+<li><p>Signal amplitude</p></li>
+<li><p>Channel metadata (if available)</p></li>
+</ul>
+</section>
+</section>
+<section id="display-modes">
+<h2>Display modes<a class="headerlink" href="#display-modes" title="Link to this heading">¶</a></h2>
+<p>viewephys provides several options for adjusting how recordings are displayed.</p>
+<section id="density-mode">
+<h3>Density Mode<a class="headerlink" href="#density-mode" title="Link to this heading">¶</a></h3>
+<p>Density mode displays the recording as a grayscale image, allowing rapid inspection of signal activity across all channels.</p>
+<p>This mode is useful for:</p>
+<ul class="simple">
+<li><p>Identifying noisy channels</p></li>
+<li><p>Detecting recording artefacts</p></li>
+<li><p>Assessing overall recording quality</p></li>
+</ul>
+</section>
+<section id="wiggle-mode">
+<h3>Wiggle Mode<a class="headerlink" href="#wiggle-mode" title="Link to this heading">¶</a></h3>
+<p>Wiggle mode displays individual traces as line plots.</p>
+<p>This mode is useful for:</p>
+<ul class="simple">
+<li><p>Inspecting waveform shape</p></li>
+<li><p>Examining activity on individual channels</p></li>
+<li><p>Comparing neighbouring channels</p></li>
+</ul>
+<p>Use the Density and Wiggle controls to switch between display modes.</p>
+</section>
+<section id="colour-maps">
+<h3>Colour Maps<a class="headerlink" href="#colour-maps" title="Link to this heading">¶</a></h3>
+<p>The appearance of the signal display can be customised using different colour maps.</p>
+<p>To change the colour map:</p>
+<ol class="arabic simple">
+<li><p>Open the View menu.</p></li>
+<li><p>Select Colourmap.</p></li>
+<li><p>Choose a colour map from the available options.</p></li>
+</ol>
+<p>Changing the colour map can improve visibility and make specific signal features easier to identify.</p>
+</section>
+</section>
+<section id="advanced-features">
+<h2>Advanced Features<a class="headerlink" href="#advanced-features" title="Link to this heading">¶</a></h2>
+<p>viewephys includes several additional tools for detailed inspection and analysis of recordings.</p>
 <section id="spike-picking-mode">
-<h2>Spike Picking Mode<a class="headerlink" href="#spike-picking-mode" title="Link to this heading">¶</a></h2>
-<p>Spike picking mode can be enabled from the Pick menu.
+<h3>Spike Picking Mode<a class="headerlink" href="#spike-picking-mode" title="Link to this heading">¶</a></h3>
+<p>Spike picking mode can be enabled from the <strong>Pick</strong> menu.
 When spike picking mode is active:</p>
 <ul class="simple">
 <li><p>Left click – Add a spike marker</p></li>
-<li><p>Shift + Left click – Remove a spike marker</p></li>
-<li><p>Ctrl + Left click – Add a spike marker without wrapping around the maximum</p></li>
-<li><p>Space – Increment the spike group number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shift</span></code> + Left click – Remove a spike marker</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + Left click – Add a spike marker without wrapping around the maximum</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Space</span></code> – Increment the spike group number</p></li>
 </ul>
 </section>
-<section id="label-channels">
-<h2>Label channels<a class="headerlink" href="#label-channels" title="Link to this heading">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-
-## Display Controls
-View colormaps 
-
-## Keyboard Shortcuts
-
-- `Ctrl + A` – Increase gain by 3 dB
-- `Ctrl + Z` – Decrease gain by 3 dB
-- `Ctrl + P` – Link displays in multi-window mode
-
-</pre></div>
-</div>
+<section id="context-menu-tools">
+<h3>Context Menu Tools<a class="headerlink" href="#context-menu-tools" title="Link to this heading">¶</a></h3>
+<p>Additional analysis tools are available from the context menu within the signal display.
+Available options include:</p>
+<ul class="simple">
+<li><p><strong>View Trace</strong> – Display the selected channel trace.</p></li>
+<li><p><strong>View Spectrum</strong> – Display the frequency spectrum of the selected channel.</p></li>
+<li><p><strong>View Spectrogram</strong> – Display a spectrogram of the selected channel.</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -308,12 +370,12 @@ View colormaps
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="using-viewephys-from-python.html">
+          <a class="next-page" href="python-api.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Using viewephys from Python</div>
+                <div class="title">Python API</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -359,14 +421,26 @@ View colormaps
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Viewer Guide</a><ul>
-<li><a class="reference internal" href="#interface-overview">Interface Overview</a><ul>
-<li><a class="reference internal" href="#main-components">Main Components</a></li>
+<li><a class="reference internal" href="#interface-overview">Interface Overview</a></li>
+<li><a class="reference internal" href="#viewing-recordings">Viewing recordings</a></li>
+<li><a class="reference internal" href="#navigating-the-viewer">Navigating the viewer</a><ul>
+<li><a class="reference internal" href="#navigation-controls">Navigation Controls</a></li>
+<li><a class="reference internal" href="#adjusting-signal-gain">Adjusting Signal Gain</a></li>
+<li><a class="reference internal" href="#keyboard-navigation">Keyboard Navigation</a></li>
+<li><a class="reference internal" href="#cursor-information">Cursor Information</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#signal-display">Signal Display</a></li>
-<li><a class="reference internal" href="#navigation">Navigation</a></li>
+<li><a class="reference internal" href="#display-modes">Display modes</a><ul>
+<li><a class="reference internal" href="#density-mode">Density Mode</a></li>
+<li><a class="reference internal" href="#wiggle-mode">Wiggle Mode</a></li>
+<li><a class="reference internal" href="#colour-maps">Colour Maps</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#advanced-features">Advanced Features</a><ul>
 <li><a class="reference internal" href="#spike-picking-mode">Spike Picking Mode</a></li>
-<li><a class="reference internal" href="#label-channels">Label channels</a></li>
+<li><a class="reference internal" href="#context-menu-tools">Context Menu Tools</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
