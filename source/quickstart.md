@@ -35,7 +35,7 @@ To load a recording:
 2. Navigate to the desired binary recording (`.bin` file).
 3. Open the file.
 
-![viewephys open recording](images/veiwephys_open_recording.png)
+![viewephys open recording](images/viewephys_open_recording.png)
 
 ### Open from the Command Line
 
