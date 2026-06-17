@@ -80,7 +80,7 @@ Use the scroll bars to move through the dataset:
 * The horizontal scroll bar moves forward and backward in time.
 * The vertical scroll bar moves between channel ranges.
 
-**Zooming**
+**Zooming** - 
 To zoom in and out, right-click and drag within the data viewer:
 
     -     Drag horizontally to zoom along the time axis.
@@ -105,7 +105,7 @@ MacOs
 - Cmd key ⌘ + Z to increase gain by 3 dB
 
 
-### Nest steps 
+### Next steps 
 
 - [Graphical User Interface](viewer-guide) - Detailed guide about the Viewer including controls and display options.
 
