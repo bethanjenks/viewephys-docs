@@ -1,19 +1,43 @@
 # Graphical User Interface
 
+This page provides an overview of the viewephys graphical user interface (GUI) and its main features. You will learn how to navigate recordings, adjust display settings, inspect signals, and access additional visualization and analysis tools.
 
-You can also load a specific recording directly when launching viewephys:
+## Launching viewephys
+
+viewephys can be launched from the command line, and recordings can be loaded either after the viewer starts or directly during launch.
+To start the viewer without opening a recording:
+
+```bash
+viewephys
+```
+
+A recording can then be loaded through the graphical interface in the Menu bar (See in[Quickstart](quickstart)).
+To open a recording immediately when launching viewephys, provide the file path using the `-f` option:
 
 ```bash
 viewephys -f path/to/recording.ap.bin
 ```
+The recording will be loaded automatically when the viewer starts.
 
+> **Note:** viewephys can also be launched directly from a Python session. See the [Python API](python-api) page for details.
+
+```bash
+viewephys -f path/to/recording.ap.bin
+```
 For example:
 
 ```bash
 viewephys -f examples/example_bin/1119617_LSE1_shank12_g0_t0.imec0.ap.bin
 ```
 
+### Selecting a Data View
+
+As described in the [Quickstart](quickstart) guide, viewephys provides several filtered representations of the same recording, including Raw, AP band, LF band, and AP band Destriped views.
+
+The active data view can be selected from the **Ephys bin Viewier** menu.
 The recording will be loaded automatically when the viewer starts.
+
+
 ## Interface Overview
 
 The main viewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.

@@ -98,6 +98,4 @@ Electrophysiology file viewer with preprocessing options
 
 ### Next Steps
 
-Once installation is complete, continue with the
-
-[Quickstart](quickstart) guide to learn how to launch viewephys and open your first recording.
+Once installation is complete, continue with the [Quickstart](quickstart) guide to learn how to launch viewephys and open your first recording.
