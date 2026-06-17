@@ -96,7 +96,7 @@ Electrophysiology file viewer with preprocessing options
 
 ```
 
-## Next Steps
+### Next Steps
 
 Once installation is complete, continue with the
 

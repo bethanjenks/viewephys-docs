@@ -27,7 +27,7 @@ app.exec()
 
 ```
 
-## View a NumPy Array
+## Open a NumPy Array from Python
 
 Use `viewephys()` to display data that is already loaded in Python.
 

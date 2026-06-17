@@ -24,16 +24,14 @@ By providing fast, interactive access to the underlying signals, viewephys makes
 
 viewephys is designed to visualize a wide range of electrophysiology recordings and is not restricted to a specific acquisition system. It primarily works with binary (.bin) electrophysiology recordings and is commonly used with Neuropixels data. It can also visualize data stored as NumPy arrays, allowing both raw and processed signals to be inspected through the [Python API](python-api). 
 
-> **Note:** When available, viewephys uses SpikeGLX metadata (.meta) files to determine recording information such as channel count and sampling rate. If no metadata file is present, these parameters can be specified manually when loading data through the Python API (see Loading NumPy Arrays).
+> **Note:** When available, viewephys uses SpikeGLX metadata (.meta) files to determine recording information such as channel count and sampling rate. If no metadata file is present, these parameters can be specified manually when loading data through the Python API (see Open a NumPy Array in [Python API](python-api)).
 
 **Documentation Overview**
 
-This documentation covers:
+To get started, follow the guides below:
 
-- [Installation](installation) of viewephys 
-- [Quickstart](quickstart) 
-- [GUI navigation and display options](gui)
-- [Python API](python-api) usage
-- Usage Examples 
-- [Troubleshooting](troubleshooting) common issues
-
+- [Installation](installation) – Install viewephys.
+- [Quickstart](quickstart) – Learn the basic workflow.
+- [Graphical User Interface](viewer-guide) – Explore the viewer interface.
+- [Python API](python-api) – Use viewephys from Python.
+- [Troubleshooting](troubleshooting) – Find solutions to common issues.
