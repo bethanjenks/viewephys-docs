@@ -1,6 +1,6 @@
 # viewephys Documentation
 
-This repository contains documentation for the viewephys electrophysiology viewer.
+This repository contains the Sphinx documentation for the viewephys electrophysiology viewer.
 
 ## Hosted Documentation
 
