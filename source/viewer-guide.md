@@ -5,14 +5,19 @@ This page provides an overview of the viewephys graphical user interface (GUI) a
 ## Launching viewephys
 
 viewephys can be launched from the command line, and recordings can be loaded either after the viewer starts or directly during launch.
-To start the viewer without opening a recording:
+
+**To start the viewer:**
 
 ```bash
 viewephys
 ```
 
-A recording can then be loaded through the graphical interface in the Menu bar (See in[Quickstart](quickstart)).
-To open a recording immediately when launching viewephys, provide the file path using the `-f` option:
+A recording can then be loaded through the viewer in the Menu bar (See in [Quickstart](quickstart)).
+
+
+*To open a recording immediately when launching viewephys*
+
+Provide the file path using the `-f` option:
 
 ```bash
 viewephys -f path/to/recording.ap.bin
@@ -25,13 +30,15 @@ The recording will be loaded automatically when the viewer starts.
 
 As described in the [Quickstart](quickstart) guide, viewephys provides several filtered representations of the same recording, including Raw, AP band, LF band, and AP band Destriped views.
 
-The active data view can be selected from the **Ephys bin Viewier** menu.
-The recording will be loaded automatically when the viewer starts.
-
-
 ## Interface Overview
 
-The main vdata iewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.
+The main data viewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.
+
+The central panel displays electrophysiology data across channels and time.
+
+- The x-axis is time.
+- The y-axis is channels.
+
 
 ![viewephys recording](images/annotated_data_viewer.png)
 
@@ -39,16 +46,11 @@ The interface is divided into several key areas:
 
 1. **Menu Bar** – Access file operations, display options, and spike-picking tools.
 2. **Channel Property Selector** – Choose the channel property displayed in the right-hand panel, such as depth (`y`), shank, or channel number (`trace`).
-3. **Display Controls** – Select channel metadata and switch between Density and Wiggle display modes.
+3. **Display Controls** – Switch between Density and Wiggle display modes.
 4. **Gain Controls** – Adjust the signal gain to improve visibility of recorded activity.
 5. **Signal Display** – The main viewing area, showing electrophysiology data across channels and time.
 6. **Navigation Controls** – Scroll through time and channel ranges within the recording.
 7. **Status Information** – Displays information about the current cursor position, including channel number, time, amplitude, and channel metadata.
-
-The central panel displays electrophysiology data across channels and time.
-
-- The x-axis is time.
-- The y-axis is channels.
 
 ## Navigating the Viewer
 
@@ -136,20 +138,6 @@ Changing the colour map can improve visibility and make specific signal features
 
 viewephys includes several additional tools for detailed inspection and analysis of recordings.
 
-### Spike Picking Mode
-
-Spike picking mode allows events to be manually marked directly within the recording display. It can be enabled from the **Pick** menu by selecting **Pick**.
-
-When spike picking mode is active:
-
-- **Left-click** – Add a spike marker. The marker automatically snaps to the largest-amplitude sample near the cursor.
-- **Ctrl + Left-click** – Add a spike marker at the exact cursor position without snapping.
-- **Shift + Left-click** – Remove the nearest spike marker.
-
-Picked events are displayed as cyan markers on the recording.
-
-> **Note:** Spike picking is intended for use when viewephys is launched from an interactive Python session. The selected events are stored in memory and can be accessed through the [Python API](python-api). If viewephys is launched from the command line, picks cannot be retrieved after the viewer is closed.
-
 ### Context Menu Tools
 
 Additional inspection tools are available from the context menu within the signal display. Right-click within the recording display to open the menu.
@@ -169,3 +157,18 @@ In the spectrogram window, you can adjust the display using the parameter boxes:
 - **noverlap** – Number of samples shared between neighbouring chunks.
 
 > **Note:** The power spectrum view does not have adjustable parameters.
+
+### Spike Picking Mode
+
+Spike picking mode allows events to be manually marked directly within the recording display. It can be enabled from the **Pick** menu by selecting **Pick**.
+
+When spike picking mode is active:
+
+- **Left-click** – Add a spike marker. The marker automatically snaps to the largest-amplitude sample near the cursor.
+- **Ctrl + Left-click** – Add a spike marker at the exact cursor position without snapping.
+- **Shift + Left-click** – Remove the nearest spike marker.
+
+Picked events are displayed as cyan markers on the recording.
+
+> **Note:** Spike picking is intended for use when viewephys is launched from an interactive Python session. The selected events are stored in memory and can be accessed through the [Python API](python-api). If viewephys is launched from the command line, picks cannot be retrieved after the viewer is closed.
+
