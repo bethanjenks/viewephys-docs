@@ -238,45 +238,66 @@
         <article role="main" id="furo-main-content">
           <section id="graphical-user-interface">
 <h1>Graphical User Interface<a class="headerlink" href="#graphical-user-interface" title="Link to this heading">¶</a></h1>
-<p>You can also load a specific recording directly when launching viewephys:</p>
+<p>This page provides an overview of the viewephys graphical user interface (GUI) and its main features. You will learn how to navigate recordings, adjust display settings, inspect signals, and access additional visualization and analysis tools.</p>
+<section id="launching-viewephys">
+<h2>Launching viewephys<a class="headerlink" href="#launching-viewephys" title="Link to this heading">¶</a></h2>
+<p>viewephys can be launched from the command line, and recordings can be loaded either after the viewer starts or directly during launch.</p>
+<p><strong>To start the viewer:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys
+</pre></div>
+</div>
+<p>A recording can then be loaded through the viewer in the Menu bar (See in <a class="reference internal" href="quickstart.html"><span class="doc std std-doc">Quickstart</span></a>).</p>
+<p><em>To open a recording immediately when launching viewephys</em></p>
+<p>Provide the file path using the <code class="docutils literal notranslate"><span class="pre">-f</span></code> option:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys<span class="w"> </span>-f<span class="w"> </span>path/to/recording.ap.bin
 </pre></div>
 </div>
-<p>For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys<span class="w"> </span>-f<span class="w"> </span>examples/example_bin/1119617_LSE1_shank12_g0_t0.imec0.ap.bin
-</pre></div>
-</div>
 <p>The recording will be loaded automatically when the viewer starts.</p>
+<blockquote>
+<div><p><strong>Note:</strong> viewephys can also be launched directly from a Python session. See the <a class="reference internal" href="python-api.html"><span class="doc std std-doc">Python API</span></a> page for details.</p>
+</div></blockquote>
+<section id="selecting-a-data-view">
+<h3>Selecting a Data View<a class="headerlink" href="#selecting-a-data-view" title="Link to this heading">¶</a></h3>
+<p>As described in the <a class="reference internal" href="quickstart.html"><span class="doc std std-doc">Quickstart</span></a> guide, viewephys provides several filtered representations of the same recording, including Raw, AP band, LF band, and AP band Destriped views.</p>
+</section>
+</section>
 <section id="interface-overview">
 <h2>Interface Overview<a class="headerlink" href="#interface-overview" title="Link to this heading">¶</a></h2>
-<p>The main viewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.</p>
-<p><img alt="viewephys recording" src="_images/viewephys_recording.png" /></p>
+<p>The main data viewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.</p>
+<p>The central panel displays electrophysiology data across channels and time.</p>
+<ul class="simple">
+<li><p>The x-axis is time.</p></li>
+<li><p>The y-axis is channels.</p></li>
+</ul>
+<p><img alt="viewephys recording" src="_images/annotated_data_viewer.png" /></p>
 <p>The interface is divided into several key areas:</p>
 <ol class="arabic simple">
 <li><p><strong>Menu Bar</strong> – Access file operations, display options, and spike-picking tools.</p></li>
-<li><p><strong>Display Controls</strong> – Select channel metadata and switch between Density and Wiggle display modes.</p></li>
+<li><p><strong>Channel Property Selector</strong> – Choose the channel property displayed in the right-hand panel, such as depth (<code class="docutils literal notranslate"><span class="pre">y</span></code>), shank, or channel number (<code class="docutils literal notranslate"><span class="pre">trace</span></code>).</p></li>
+<li><p><strong>Display Controls</strong> – Switch between Density and Wiggle display modes.</p></li>
 <li><p><strong>Gain Controls</strong> – Adjust the signal gain to improve visibility of recorded activity.</p></li>
 <li><p><strong>Signal Display</strong> – The main viewing area, showing electrophysiology data across channels and time.</p></li>
 <li><p><strong>Navigation Controls</strong> – Scroll through time and channel ranges within the recording.</p></li>
 <li><p><strong>Status Information</strong> – Displays information about the current cursor position, including channel number, time, amplitude, and channel metadata.</p></li>
 </ol>
-<p>The central panel displays electrophysiology data across channels and time.</p>
-<ul class="simple">
-<li><p>The x-axis is time.</p></li>
-<li><p>The y-axis is channels.</p></li>
-<li><p>Data are shown as a density map or traces.</p></li>
-</ul>
 </section>
 <section id="navigating-the-viewer">
 <h2>Navigating the Viewer<a class="headerlink" href="#navigating-the-viewer" title="Link to this heading">¶</a></h2>
 <p>The viewer provides several tools for exploring recordings across time and channels.</p>
 <section id="navigation-controls">
 <h3>Navigation Controls<a class="headerlink" href="#navigation-controls" title="Link to this heading">¶</a></h3>
-<p>Use the horizontal and vertical scroll bars to move through the recording:</p>
+<p>Use the scroll bars to move through the dataset:</p>
 <ul class="simple">
 <li><p>The horizontal scroll bar moves forward and backward in time.</p></li>
 <li><p>The vertical scroll bar moves between channel ranges.</p></li>
 </ul>
+<p><strong>Zooming</strong> -
+To zoom in and out, right-click and drag within the data viewer:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-     Drag horizontally to zoom along the time axis.
+-     Drag vertically to zoom along the channel axis.
+</pre></div>
+</div>
+<p><img alt="Zoomed-in viewer" src="_images/data_viewer_zoomed.png" /></p>
 </section>
 <section id="adjusting-signal-gain">
 <h3>Adjusting Signal Gain<a class="headerlink" href="#adjusting-signal-gain" title="Link to this heading">¶</a></h3>
@@ -284,8 +305,16 @@
 <p>Gain can be adjusted using:</p>
 <ul class="simple">
 <li><p>The gain control in the viewer</p></li>
+</ul>
+<p>Windows/linux</p>
+<ul class="simple">
 <li><p>Ctrl + A or Page Up to increase gain by 3 dB</p></li>
 <li><p>Ctrl + Z or Page Down to decrease gain by 3 dB</p></li>
+</ul>
+<p>MacOs</p>
+<ul class="simple">
+<li><p>Cmd key ⌘ + A to decrease gain by 3 dB</p></li>
+<li><p>Cmd key ⌘ + Z to increase gain by 3 dB</p></li>
 </ul>
 </section>
 <section id="keyboard-navigation">
@@ -299,28 +328,28 @@
 </section>
 <section id="cursor-information">
 <h3>Cursor Information<a class="headerlink" href="#cursor-information" title="Link to this heading">¶</a></h3>
-<p>Moving the cursor over the signal display updates the information panel with:</p>
+<p>The lower part of the left panel displays cursor information as you move the mouse over the recording. This readout updates automatically and shows the values under the pointer.</p>
+<p>The cursor readout includes:</p>
 <ul class="simple">
-<li><p>Channel number</p></li>
-<li><p>Time</p></li>
-<li><p>Signal amplitude</p></li>
-<li><p>Channel metadata (if available)</p></li>
+<li><p><strong>Time</strong> – The time position of the cursor, in seconds.</p></li>
+<li><p><strong>Amplitude</strong> – The signal value at the cursor position.</p></li>
+<li><p><strong>Channel</strong> – The channel under the cursor.</p></li>
+<li><p><strong>Header value</strong> – The value of the currently selected channel metadata field, such as depth or shank.</p></li>
 </ul>
+<p>This allows you to quickly check the time, signal amplitude, channel number, and selected channel property at any point in the recording without clicking.</p>
+<blockquote>
+<div><p><strong>Note:</strong> In the current version, some cursor readout values may overlap in the left panel, making them difficult to read.</p>
+</div></blockquote>
 </section>
 </section>
 <section id="display-modes">
 <h2>Display modes<a class="headerlink" href="#display-modes" title="Link to this heading">¶</a></h2>
 <p>viewephys provides several options for adjusting how recordings are displayed.</p>
-<section id="density-mode">
-<h3>Density Mode<a class="headerlink" href="#density-mode" title="Link to this heading">¶</a></h3>
+<p><strong>Density Mode</strong></p>
 <p>Density mode displays signal amplitude as a 2D intensity map across channels and time.</p>
-</section>
-<section id="wiggle-mode">
-<h3>Wiggle Mode<a class="headerlink" href="#wiggle-mode" title="Link to this heading">¶</a></h3>
+<p><strong>Wiggle Mode</strong></p>
 <p>Wiggle mode displays individual channels as trace plots, allowing detailed inspection of signal waveforms.</p>
-</section>
-<section id="colour-maps">
-<h3>Colour Maps<a class="headerlink" href="#colour-maps" title="Link to this heading">¶</a></h3>
+<p><strong>Colour Maps</strong></p>
 <p>The appearance of the signal display can be customised using different colour maps.</p>
 <p>To change the colour map:</p>
 <ol class="arabic simple">
@@ -330,30 +359,42 @@
 </ol>
 <p>Changing the colour map can improve visibility and make specific signal features easier to identify.</p>
 </section>
-</section>
 <section id="advanced-features">
 <h2>Advanced Features<a class="headerlink" href="#advanced-features" title="Link to this heading">¶</a></h2>
 <p>viewephys includes several additional tools for detailed inspection and analysis of recordings.</p>
-<section id="spike-picking-mode">
-<h3>Spike Picking Mode<a class="headerlink" href="#spike-picking-mode" title="Link to this heading">¶</a></h3>
-<p>Spike picking mode can be enabled from the <strong>Pick</strong> menu.
-When spike picking mode is active:</p>
-<ul class="simple">
-<li><p>Left click – Add a spike marker</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Shift</span></code> + Left click – Remove a spike marker</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + Left click – Add a spike marker without wrapping around the maximum</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Space</span></code> – Increment the spike group number</p></li>
-</ul>
-</section>
 <section id="context-menu-tools">
 <h3>Context Menu Tools<a class="headerlink" href="#context-menu-tools" title="Link to this heading">¶</a></h3>
-<p>Additional inspection tools are available from the context menu within the signal display. These tools can be accessed by right-clicking within the recording display.</p>
+<p>Additional inspection tools are available from the context menu within the signal display. Right-click within the recording display to open the menu.</p>
 <p>Available options include:</p>
 <ul class="simple">
-<li><p><strong>View Trace</strong></p></li>
-<li><p><strong>View Spectrum</strong></p></li>
-<li><p><strong>View Spectrogram</strong></p></li>
+<li><p><strong>View Trace</strong> – Opens a pop-out trace view for the channel under the cursor.</p></li>
+<li><p><strong>View Spectrum</strong> – Opens a power spectrum for the channel under the cursor, showing signal strength across frequency for the currently visible time range.</p></li>
+<li><p><strong>View Spectrogram</strong> – Opens a spectrogram for the channel under the cursor, showing how frequency content changes over time.</p></li>
 </ul>
+<p>The spectrum and spectrogram windows update as you move the mouse over different channels in the main viewer.</p>
+<p>In the spectrogram window, you can adjust the display using the parameter boxes:</p>
+<ul class="simple">
+<li><p><strong>nperseg</strong> – Window length, in samples, used to split the signal into chunks.</p></li>
+<li><p><strong>nfft</strong> – Fourier transform length, in samples.</p></li>
+<li><p><strong>noverlap</strong> – Number of samples shared between neighbouring chunks.</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Note:</strong> The power spectrum view does not have adjustable parameters.</p>
+</div></blockquote>
+</section>
+<section id="spike-picking-mode">
+<h3>Spike Picking Mode<a class="headerlink" href="#spike-picking-mode" title="Link to this heading">¶</a></h3>
+<p>Spike picking mode allows events to be manually marked directly within the recording display. It can be enabled from the <strong>Pick</strong> menu by selecting <strong>Pick</strong>.</p>
+<p>When spike picking mode is active:</p>
+<ul class="simple">
+<li><p><strong>Left-click</strong> – Add a spike marker. The marker automatically snaps to the largest-amplitude sample near the cursor.</p></li>
+<li><p><strong>Ctrl + Left-click</strong> – Add a spike marker at the exact cursor position without snapping.</p></li>
+<li><p><strong>Shift + Left-click</strong> – Remove the nearest spike marker.</p></li>
+</ul>
+<p>Picked events are displayed as cyan markers on the recording.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Spike picking is intended for use when viewephys is launched from an interactive Python session. The selected events are stored in memory and can be accessed through the <a class="reference internal" href="python-api.html"><span class="doc std std-doc">Python API</span></a>. If viewephys is launched from the command line, picks cannot be retrieved after the viewer is closed.</p>
+</div></blockquote>
 </section>
 </section>
 </section>
@@ -414,6 +455,10 @@ When spike picking mode is active:</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Graphical User Interface</a><ul>
+<li><a class="reference internal" href="#launching-viewephys">Launching viewephys</a><ul>
+<li><a class="reference internal" href="#selecting-a-data-view">Selecting a Data View</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#interface-overview">Interface Overview</a></li>
 <li><a class="reference internal" href="#navigating-the-viewer">Navigating the Viewer</a><ul>
 <li><a class="reference internal" href="#navigation-controls">Navigation Controls</a></li>
@@ -422,15 +467,10 @@ When spike picking mode is active:</p>
 <li><a class="reference internal" href="#cursor-information">Cursor Information</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#display-modes">Display modes</a><ul>
-<li><a class="reference internal" href="#density-mode">Density Mode</a></li>
-<li><a class="reference internal" href="#wiggle-mode">Wiggle Mode</a></li>
-<li><a class="reference internal" href="#colour-maps">Colour Maps</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#display-modes">Display modes</a></li>
 <li><a class="reference internal" href="#advanced-features">Advanced Features</a><ul>
-<li><a class="reference internal" href="#spike-picking-mode">Spike Picking Mode</a></li>
 <li><a class="reference internal" href="#context-menu-tools">Context Menu Tools</a></li>
+<li><a class="reference internal" href="#spike-picking-mode">Spike Picking Mode</a></li>
 </ul>
 </li>
 </ul>
