@@ -38,7 +38,7 @@ viewephys
 
 ![viewephys live recording](images/viewephys_open_live_recording.png)
 
-### Selecting Data Views
+## Selecting Data Views
 viewephys allows you to switch between different filtered representations of the same recording, depending on the signals you want to inspect.
 
 **Raw** - 
@@ -79,11 +79,14 @@ Use the scroll bars to move through the dataset:
 
 * The horizontal scroll bar moves forward and backward in time.
 * The vertical scroll bar moves between channel ranges.
-* To zoom in on a region of interest
-    -     Right-click and drag horizontally to zoom into a specific time range
-    -     Right-click and drag vertically to zoom into a specific range of channels.
 
-![Zoomedin recording](images/data_viewer_zoomed.png)
+**Zooming**
+To zoom in and out, right-click and drag within the data viewer:
+
+    -     Drag horizontally to zoom along the time axis.
+    -     Drag vertically to zoom along the channel axis.
+
+![Zoomed-in viewer](images/data_viewer_zoomed.png)
 
 ### Adjusting Signal Gain
 
@@ -98,12 +101,12 @@ Windows/linux
 - Ctrl + Z or Page Down to decrease gain by 3 dB
 
 MacOs 
-- Cmd + A to decrease gain by 3 dB
-- Cmd + Z to increase gain by 3 dB
+- Cmd key ⌘ + A to decrease gain by 3 dB
+- Cmd key ⌘ + Z to increase gain by 3 dB
 
 
-### Explore viewephys further 
+### Nest steps 
 
-- [Viewer Guide](viewer-guide) – Learn how to navigate the interface and inspect recordings.
+- [Graphical User Interface](viewer-guide) - Detailed guide about the Viewer including controls and display options.
 
-- [Python API](python-api) – Learn how to open recordings and visualize data from Python.
+- [Python API](python-api) – Examples for loading recordings and visualizing data from Python.
