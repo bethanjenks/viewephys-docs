@@ -40,7 +40,7 @@ The recording will be loaded automatically when the viewer starts.
 
 ## Interface Overview
 
-The main viewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.
+The main vdata iewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.
 
 ![viewephys recording](images/viewephys_recording.png)
 
@@ -65,10 +65,18 @@ The viewer provides several tools for exploring recordings across time and chann
 
 ### Navigation Controls
 
-Use the horizontal and vertical scroll bars to move through the recording:
+Use the scroll bars to move through the dataset:
 
-- The horizontal scroll bar moves forward and backward in time.
-- The vertical scroll bar moves between channel ranges.
+* The horizontal scroll bar moves forward and backward in time.
+* The vertical scroll bar moves between channel ranges.
+
+**Zooming** - 
+To zoom in and out, right-click and drag within the data viewer:
+
+    -     Drag horizontally to zoom along the time axis.
+    -     Drag vertically to zoom along the channel axis.
+
+![Zoomed-in viewer](images/data_viewer_zoomed.png)
 
 ### Adjusting Signal Gain
 
@@ -76,9 +84,15 @@ The gain control can be used to increase or decrease signal visibility.
 
 Gain can be adjusted using:
 
-- The gain control in the viewer
+- The gain control in the viewer 
+
+Windows/linux 
 - Ctrl + A or Page Up to increase gain by 3 dB
 - Ctrl + Z or Page Down to decrease gain by 3 dB
+
+MacOs 
+- Cmd key ⌘ + A to decrease gain by 3 dB
+- Cmd key ⌘ + Z to increase gain by 3 dB
 
 ### Keyboard Navigation
 
@@ -101,15 +115,15 @@ Moving the cursor over the signal display updates the information panel with:
 
 viewephys provides several options for adjusting how recordings are displayed.
 
-### Density Mode
+**Density Mode**
 
 Density mode displays signal amplitude as a 2D intensity map across channels and time.
 
-### Wiggle Mode
+**Wiggle Mode**
 
 Wiggle mode displays individual channels as trace plots, allowing detailed inspection of signal waveforms.
 
-### Colour Maps
+**Colour Maps**
 
 The appearance of the signal display can be customised using different colour maps.
 
@@ -127,20 +141,24 @@ viewephys includes several additional tools for detailed inspection and analysis
 
 ### Spike Picking Mode
 
-Spike picking mode can be enabled from the **Pick** menu.
+Spike picking mode allows events to be manually marked directly within the recording display. It can be enabled from the **Pick** menu by selecting **Pick**.
+
 When spike picking mode is active:
 
-- Left click – Add a spike marker
-- `Shift` + Left click – Remove a spike marker
-- `Ctrl` + Left click – Add a spike marker without wrapping around the maximum
-- `Space` – Increment the spike group number
+- **Left-click** – Add a spike marker. The marker automatically snaps to the largest-amplitude sample near the cursor.
+- **Ctrl + Left-click** – Add a spike marker at the exact cursor position without snapping.
+- **Shift + Left-click** – Remove the nearest spike marker.
+
+Picked events are displayed as cyan markers on the recording.
+
+> **Note:** Spike picking is intended for use when viewephys is launched from an interactive Python session. The selected events are stored in memory and can be accessed through the [Python API](python-api). If viewephys is launched from the command line, picks cannot be retrieved after the viewer is closed.
 
 ### Context Menu Tools
 
-Additional inspection tools are available from the context menu within the signal display. These tools can be accessed by right-clicking within the recording display.
+Additional inspection tools are available from the context menu within the signal display. These tools can be accessed by right-clicking within the recording display and moving the cursor in the signal display.
 
 Available options include:
 
-- **View Trace**
-- **View Spectrum**
-- **View Spectrogram**
+- **View Trace** - Description Needed 
+- **View Spectrum** - Description Needed
+- **View Spectrogram** - Description Needed 
