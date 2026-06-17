@@ -49,7 +49,7 @@ If the same title is reused, viewephys updates the existing window instead of op
 
 When using viewephys from a standalone Python script, you need to create the Qt application before opening the viewer and start the Qt event loop at the end of the script.
 
-## Open a Binary File 
+### Open a Binary File 
 
 Use `EphysBinViewer` to open a binary recording file from a script.
 
@@ -66,7 +66,7 @@ app.exec()
 
 ```
 
-## Display a NumPy Array
+### Display a NumPy Array
 
 Use `viewephys()` to display data that is already loaded in Python.
 
