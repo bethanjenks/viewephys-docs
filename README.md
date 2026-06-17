@@ -30,5 +30,5 @@ make html
 Open the generated site:
 
 ```bash
-open build/html/index.html
+python -m webbrowser -t build/html/index.html
 ```
