@@ -6,9 +6,7 @@ viewephys can be used in three common workflows:
 2. Monitor a live recording during data acquisition.
 3. Visualize recordings and processed data from Python.
 
-The first two workflows are covered in this guide. For Python-based workflows, see [Python API](python-api). 
-
-> **Note:** If you installed viewephys in a virtual environment, ensure it is activated before running any of the commands below.
+> **Note:** The first two workflows are covered in this guide. For Python-based workflows, see [Python API](python-api). 
 
 ## Open an Existing Recording
 
@@ -20,6 +18,8 @@ Recordings can be loaded either:
 - Directly from the command line
 
 ### Open from the Graphical Interface
+
+> **Note:** If you installed viewephys in a virtual environment, ensure it is activated before running any of the commands below.
 
 Launch the viewer:
 

@@ -29,7 +29,7 @@ viewephys provides:
 - Interactive navigation through channels and time
 - Real-time monitoring of ongoing recordings
 - Immediate feedback on recording quality
-- Support for viewing data directly from Python
+- Support for viewing data within a Python session
 
 **Key Features**
 

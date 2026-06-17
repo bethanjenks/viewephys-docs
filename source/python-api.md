@@ -1,6 +1,6 @@
 # Python API
 
-viewephys can be launched directly from Python, allowing recordings and processed data to be visualized programmatically.
+viewephys can be launched within a Python session, allowing for a more flexible workflow. 
 
 This is useful when working with:
 

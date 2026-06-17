@@ -9,7 +9,8 @@ Before installing viewephys, ensure you have:
 
 ### 1. Create a Virtual Environment
 
-It is recommended to install viewephys in a virtual environment to avoid conflicts with other Python packages.
+It is recommended to install viewephys in a virtual environment to avoid conflicts with other Python packages. 
+> **Note:** viewephys is also compatible with the IBL Python environment.
 
 ### Using Python venv
 
@@ -39,7 +40,6 @@ Create and activate a Conda environment:
 conda create -n viewephys python=3.12
 conda activate viewephys
 ```
-> **Note:** viewephys is also compatible with the standard IBL Python environment.
 
 ### 2. Install viewephys
 
