@@ -21,15 +21,6 @@ The recording will be loaded automatically when the viewer starts.
 
 > **Note:** viewephys can also be launched directly from a Python session. See the [Python API](python-api) page for details.
 
-```bash
-viewephys -f path/to/recording.ap.bin
-```
-For example:
-
-```bash
-viewephys -f examples/example_bin/1119617_LSE1_shank12_g0_t0.imec0.ap.bin
-```
-
 ### Selecting a Data View
 
 As described in the [Quickstart](quickstart) guide, viewephys provides several filtered representations of the same recording, including Raw, AP band, LF band, and AP band Destriped views.
@@ -42,22 +33,22 @@ The recording will be loaded automatically when the viewer starts.
 
 The main vdata iewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.
 
-![viewephys recording](images/viewephys_recording.png)
+![viewephys recording](images/annotated_data_viewer.png)
 
 The interface is divided into several key areas:
 
 1. **Menu Bar** – Access file operations, display options, and spike-picking tools.
-2. **Display Controls** – Select channel metadata and switch between Density and Wiggle display modes.
-3. **Gain Controls** – Adjust the signal gain to improve visibility of recorded activity.
-4. **Signal Display** – The main viewing area, showing electrophysiology data across channels and time.
-5. **Navigation Controls** – Scroll through time and channel ranges within the recording.
-6. **Status Information** – Displays information about the current cursor position, including channel number, time, amplitude, and channel metadata.
+2. **Channel Property Selector** – Choose the channel property displayed in the right-hand panel, such as depth (`y`), shank, or channel number (`trace`).
+3. **Display Controls** – Select channel metadata and switch between Density and Wiggle display modes.
+4. **Gain Controls** – Adjust the signal gain to improve visibility of recorded activity.
+5. **Signal Display** – The main viewing area, showing electrophysiology data across channels and time.
+6. **Navigation Controls** – Scroll through time and channel ranges within the recording.
+7. **Status Information** – Displays information about the current cursor position, including channel number, time, amplitude, and channel metadata.
 
 The central panel displays electrophysiology data across channels and time.
 
 - The x-axis is time.
 - The y-axis is channels.
-- Data are shown as a density map or traces.
 
 ## Navigating the Viewer
 
