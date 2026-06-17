@@ -104,12 +104,18 @@ The arrow keys can be used to navigate recordings:
 
 ### Cursor Information
 
-Moving the cursor over the signal display updates the information panel with:
+The lower part of the left panel displays cursor information as you move the mouse over the recording. This readout updates automatically and shows the values under the pointer.
 
-- Channel number
-- Time
-- Signal amplitude
-- Channel metadata (if available)
+The cursor readout includes:
+
+- **Time** – The time position of the cursor, in seconds.
+- **Amplitude** – The signal value at the cursor position.
+- **Channel** – The channel under the cursor.
+- **Header value** – The value of the currently selected channel metadata field, such as depth or shank.
+
+This allows you to quickly check the time, signal amplitude, channel number, and selected channel property at any point in the recording without clicking.
+
+> **Note:** In the current version, some cursor readout values may overlap in the left panel, making them difficult to read.
 
 ## Display modes
 
@@ -155,10 +161,20 @@ Picked events are displayed as cyan markers on the recording.
 
 ### Context Menu Tools
 
-Additional inspection tools are available from the context menu within the signal display. These tools can be accessed by right-clicking within the recording display and moving the cursor in the signal display.
+Additional inspection tools are available from the context menu within the signal display. Right-click within the recording display to open the menu.
 
 Available options include:
 
-- **View Trace** - Description Needed 
-- **View Spectrum** - Description Needed
-- **View Spectrogram** - Description Needed 
+- **View Trace** – Opens a pop-out trace view for the channel under the cursor.
+- **View Spectrum** – Opens a power spectrum for the channel under the cursor, showing signal strength across frequency for the currently visible time range.
+- **View Spectrogram** – Opens a spectrogram for the channel under the cursor, showing how frequency content changes over time.
+
+The spectrum and spectrogram windows update as you move the mouse over different channels in the main viewer.
+
+In the spectrogram window, you can adjust the display using the parameter boxes:
+
+- **nperseg** – Window length, in samples, used to split the signal into chunks.
+- **nfft** – Fourier transform length, in samples.
+- **noverlap** – Number of samples shared between neighbouring chunks.
+
+> **Note:** The power spectrum view does not have adjustable parameters.
