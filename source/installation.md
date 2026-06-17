@@ -1,16 +1,21 @@
 # Installation
 
+This page will guide you through installing viewephys and verifying that the installation was successful.
+
 ## Requirements
 
 Before installing viewephys, ensure you have:
 
-- Python 3.10 or later
+- Python >= 3.10
+- pip (included with most Python installations; run `pip --version` to check)
 - A virtual environment (recommended)
 
 ### 1. Create a Virtual Environment
 
 It is recommended to install viewephys in a virtual environment to avoid conflicts with other Python packages. 
 > **Note:** viewephys is also compatible with the IBL Python environment.
+
+Choose one of the following methods:
 
 ### Using Python venv
 
@@ -42,6 +47,8 @@ conda activate viewephys
 ```
 
 ### 2. Install viewephys
+
+Choose one of the following methods:
 
 ### Install from PyPI
 
@@ -89,3 +96,8 @@ Electrophysiology file viewer with preprocessing options
 
 ```
 
+## Next Steps
+
+Once installation is complete, continue with the
+
+[Quickstart](quickstart) guide to learn how to launch viewephys and open your first recording.
