@@ -2,6 +2,10 @@
 
 This repository contains documentation for the viewephys electrophysiology viewer.
 
+## Hosted Documentation
+
+https://bethanjenks.github.io/viewephys-docs/
+
 ## Build Locally
 
 Create and activate a virtual environment:
