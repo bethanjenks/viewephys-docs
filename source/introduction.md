@@ -12,11 +12,11 @@ Electrophysiology recordings can be challenging to inspect directly. Datasets ar
 
 Common uses for viewephys include:
 
-* Checking signal quality immediately after a recording
-* Browsing recordings across channels and time
-* Monitoring data during acquisition
-* Investigating artifacts or noisy channels
-* Visualizing data directly from a Python session
+1. Inspect existing recordings – Open previously acquired data to assess signal quality, investigate artifacts, and explore recordings across channels and time.
+2. Monitor live acquisitions – Visualize data as it is being recorded to quickly identify potential issues during an experiment.
+3. Visualize data from Python – Display recordings, NumPy arrays, or processed signals directly from a Python session. 
+
+For step-by-step examples of these workflows, see the [Quickstart](quickstart) and [Python API](python-api) sections.
 
 By providing fast, interactive access to the underlying signals, viewephys makes it easy to understand what was recorded and identify potential issues early in the analysis workflow.
 
@@ -31,8 +31,8 @@ viewephys is designed to visualize a wide range of electrophysiology recordings 
 
 This documentation covers:
 
-- [Installation](installation)
-- [Quickstart](quickstart) workflows
+- [Installation](installation) of viewephys 
+- [Quickstart](quickstart) 
 - [GUI navigation and display options](graphicaluserinterface)
 - [Python API](python-api) usage
 - Usage Examples 
