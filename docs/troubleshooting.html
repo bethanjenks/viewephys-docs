@@ -195,7 +195,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="viewer-guide.html">Viewer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewer-guide.html">Graphical User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-api.html">Python API</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Troubleshooting</a></li>
 </ul>
@@ -239,9 +239,20 @@
           <section id="troubleshooting">
 <h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h1>
 <p>If you encounter problems while installing or using viewephys, the following sections describe common issues and their solutions.</p>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Link to this heading">¶</a></h2>
+<p>If your issue is not covered here, you can:</p>
+<ul class="simple">
+<li><p>Search existing issues on the viewephys GitHub repository.</p></li>
+<li><p>Open a new issue in the repositiory.</p></li>
+</ul>
+<p>GitHub repository:
+<a class="reference external" href="https://github.com/int-brain-lab/viewephys">viewephys</a></p>
+</section>
 <section id="common-issues">
 <h2>Common Issues<a class="headerlink" href="#common-issues" title="Link to this heading">¶</a></h2>
-<p><strong>Viewer Does Not Launch</strong></p>
+<section id="viewer-does-not-launch">
+<h3>Viewer Does Not Launch<a class="headerlink" href="#viewer-does-not-launch" title="Link to this heading">¶</a></h3>
 <p>If <code class="docutils literal notranslate"><span class="pre">viewephys</span></code> does not start:</p>
 <ul class="simple">
 <li><p>Verify that the package is installed correctly.</p></li>
@@ -252,29 +263,26 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys<span class="w"> </span>--help
 </pre></div>
 </div>
-<p><strong>Command Not Found</strong></p>
-<p>If your terminal reports:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>viewephys: command not found
-</pre></div>
-</div>
-<p>make sure:</p>
-<ul class="simple">
-<li><p>The environment containing viewephys is activated.</p></li>
-<li><p>The installation completed successfully.</p></li>
-</ul>
-<p>You can verify the installation with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>show<span class="w"> </span>viewephys
-</pre></div>
-</div>
-<p><strong>File Not Found</strong></p>
+</section>
+<section id="file-not-found">
+<h3>File Not Found<a class="headerlink" href="#file-not-found" title="Link to this heading">¶</a></h3>
 <p>If a recording cannot be opened:</p>
 <ul class="simple">
 <li><p>Verify that the file path is correct.</p></li>
 <li><p>Check that the recording file exists.</p></li>
 <li><p>Ensure you have permission to access the file.</p></li>
 </ul>
-<p><strong>Python Viewer Does Not Appear</strong></p>
-<p>When launching viewephys from a Python script, make sure a Qt application is created before opening the viewer:</p>
+</section>
+<section id="incorrect-visualization-of-data">
+<h3>Incorrect visualization of Data<a class="headerlink" href="#incorrect-visualization-of-data" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Verify number of channels and sampling rate</p></li>
+<li><p>check the selected data view for filtering options</p></li>
+</ul>
+</section>
+<section id="python-viewer-does-not-appear">
+<h3>Python Viewer Does Not Appear<a class="headerlink" href="#python-viewer-does-not-appear" title="Link to this heading">¶</a></h3>
+<p>When launching viewephys from an a Python script, make sure a Qt application is created before opening the viewer:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">viewephys.gui</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_app</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">create_app</span><span class="p">()</span>
@@ -285,15 +293,6 @@
 </pre></div>
 </div>
 </section>
-<section id="support">
-<h2>Support<a class="headerlink" href="#support" title="Link to this heading">¶</a></h2>
-<p>If your issue is not covered here, you can:</p>
-<ul class="simple">
-<li><p>Search existing issues on the viewephys GitHub repository.</p></li>
-<li><p>Open a new issue in the repositiory.</p></li>
-</ul>
-<p>GitHub repository:
-<a class="reference external" href="https://github.com/int-brain-lab/viewephys">viewephys</a></p>
 </section>
 </section>
 
@@ -345,8 +344,14 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Troubleshooting</a><ul>
-<li><a class="reference internal" href="#common-issues">Common Issues</a></li>
 <li><a class="reference internal" href="#support">Support</a></li>
+<li><a class="reference internal" href="#common-issues">Common Issues</a><ul>
+<li><a class="reference internal" href="#viewer-does-not-launch">Viewer Does Not Launch</a></li>
+<li><a class="reference internal" href="#file-not-found">File Not Found</a></li>
+<li><a class="reference internal" href="#incorrect-visualization-of-data">Incorrect visualization of Data</a></li>
+<li><a class="reference internal" href="#python-viewer-does-not-appear">Python Viewer Does Not Appear</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

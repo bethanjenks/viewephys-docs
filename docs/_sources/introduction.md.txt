@@ -1,51 +1,37 @@
 # Introduction
 
-viewephys is a lightweight Python tool developed by the International Brain Laboratory (IBL) for visualizing electrophysiology recordings, particularly Neuropixels data.
+viewephys is a lightweight Python viewer for electrophysiology data. Developed by the International Brain Laboratory (IBL), it provides a fast and interactive way to visualize recordings without extensive preprocessing or setup. 
 
-The viewer is designed for fast, interactive exploration of neural recordings, allowing users to inspect signal quality, navigate across channels and time, and monitor recordings during acquisition.
+Designed for neuroscientists, electrophysiologists, and developers working with neural recordings, it supports common tasks such as checking signal quality, navigating across channels and time, monitoring experiments in progress, and quickly assessing newly acquired data.
 
-Unlike analysis-focused tools, viewephys focuses on rapid visualization and data inspection.
+Unlike analysis packages that focus on spike sorting or downstream processing, viewephys is primarily a visualization tool. Its purpose is to provide a direct view of the underlying signals, helping users understand their recordings and identify potential issues before further analysis.
 
-**Intended Audience**
+## What Can I Use viewephys For?
 
-viewephys is intended for users working with electrophysiology data, including:
+Electrophysiology recordings can be challenging to inspect directly. Datasets are often large, contain hundreds of channels, and may require significant processing before they can be visualized. When working with raw recordings, it is often useful to quickly assess data quality before beginning downstream analysis.
 
-- Neuroscientists
-- Electrophysiology researchers
-- Data analysts and engineers
-- Users working with Neuropixels recordings
+Common uses for viewephys include:
 
-**Use Cases** 
+1. Inspect existing recordings – Open previously acquired data to assess signal quality, investigate artifacts, and explore recordings across channels and time.
+2. Monitor live acquisitions – Visualize data as it is being recorded to quickly identify potential issues during an experiment.
+3. Visualize data from Python – Display recordings, NumPy arrays, or processed signals directly from a Python session. 
 
-Raw electrophysiology recordings can be difficult to inspect because:
+For step-by-step examples of these workflows, see the [Quickstart](quickstart) and [Python API](python-api) sections.
 
-- Recording files are large and complex
-- Raw voltage traces are not immediately interpretable
-- Many visualization tools require substantial setup or processing
+By providing fast, interactive access to the underlying signals, viewephys makes it easy to understand what was recorded and identify potential issues early in the analysis workflow.
 
-viewephys provides:
+## Supported Input Data 
 
-- A quick way to open and visualize recordings
-- Interactive navigation through channels and time
-- Real-time monitoring of ongoing recordings
-- Immediate feedback on recording quality
-- Support for viewing data within a Python session
+viewephys is designed to visualize a wide range of electrophysiology recordings and is not restricted to a specific acquisition system. It primarily works with binary (.bin) electrophysiology recordings and is commonly used with Neuropixels data. It can also visualize data stored as NumPy arrays, allowing both raw and processed signals to be inspected through the [Python API](python-api). 
 
-**Key Features**
-
-viewephys supports several common workflows:
-
-- Open and inspect previously acquired recordings
-- Monitor recordings during data acquisition
-- Visualize NumPy arrays and processed data from Python
+> **Note:** When available, viewephys uses SpikeGLX metadata (.meta) files to determine recording information such as channel count and sampling rate. If no metadata file is present, these parameters can be specified manually when loading data through the Python API (see Display a NumPy Array in [Python API](python-api)).
 
 **Documentation Overview**
 
-This documentation covers:
+To get started, follow the guides below:
 
-- Installation
-- Quickstart workflows
-- Viewer navigation and display options
-- Python API usage
-- Troubleshooting common issues
-
+- [Installation](installation) – Install viewephys.
+- [Quickstart](quickstart) – Learn the basic workflow.
+- [Graphical User Interface](viewer-guide) – Explore the viewer interface.
+- [Python API](python-api) – Use viewephys from Python.
+- [Troubleshooting](troubleshooting) – Find solutions to common issues.

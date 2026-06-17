@@ -172,7 +172,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
@@ -195,7 +195,7 @@
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="viewer-guide.html">Viewer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewer-guide.html">Graphical User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-api.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
@@ -231,55 +231,44 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
           <section id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h1>
-<p>viewephys is a lightweight Python tool developed by the International Brain Laboratory (IBL) for visualizing electrophysiology recordings, particularly Neuropixels data.</p>
-<p>The viewer is designed for fast, interactive exploration of neural recordings, allowing users to inspect signal quality, navigate across channels and time, and monitor recordings during acquisition.</p>
-<p>Unlike analysis-focused tools, viewephys focuses on rapid visualization and data inspection.</p>
-<p><strong>Intended Audience</strong></p>
-<p>viewephys is intended for users working with electrophysiology data, including:</p>
-<ul class="simple">
-<li><p>Neuroscientists</p></li>
-<li><p>Electrophysiology researchers</p></li>
-<li><p>Data analysts and engineers</p></li>
-<li><p>Users working with Neuropixels recordings</p></li>
-</ul>
-<p><strong>Use Cases</strong></p>
-<p>Raw electrophysiology recordings can be difficult to inspect because:</p>
-<ul class="simple">
-<li><p>Recording files are large and complex</p></li>
-<li><p>Raw voltage traces are not immediately interpretable</p></li>
-<li><p>Many visualization tools require substantial setup or processing</p></li>
-</ul>
-<p>viewephys provides:</p>
-<ul class="simple">
-<li><p>A quick way to open and visualize recordings</p></li>
-<li><p>Interactive navigation through channels and time</p></li>
-<li><p>Real-time monitoring of ongoing recordings</p></li>
-<li><p>Immediate feedback on recording quality</p></li>
-<li><p>Support for viewing data within a Python session</p></li>
-</ul>
-<p><strong>Key Features</strong></p>
-<p>viewephys supports several common workflows:</p>
-<ul class="simple">
-<li><p>Open and inspect previously acquired recordings</p></li>
-<li><p>Monitor recordings during data acquisition</p></li>
-<li><p>Visualize NumPy arrays and processed data from Python</p></li>
-</ul>
+<p>viewephys is a lightweight Python viewer for electrophysiology data. Developed by the International Brain Laboratory (IBL), it provides a fast and interactive way to visualize recordings without extensive preprocessing or setup.</p>
+<p>Designed for neuroscientists, electrophysiologists, and developers working with neural recordings, it supports common tasks such as checking signal quality, navigating across channels and time, monitoring experiments in progress, and quickly assessing newly acquired data.</p>
+<p>Unlike analysis packages that focus on spike sorting or downstream processing, viewephys is primarily a visualization tool. Its purpose is to provide a direct view of the underlying signals, helping users understand their recordings and identify potential issues before further analysis.</p>
+<section id="what-can-i-use-viewephys-for">
+<h2>What Can I Use viewephys For?<a class="headerlink" href="#what-can-i-use-viewephys-for" title="Link to this heading">¶</a></h2>
+<p>Electrophysiology recordings can be challenging to inspect directly. Datasets are often large, contain hundreds of channels, and may require significant processing before they can be visualized. When working with raw recordings, it is often useful to quickly assess data quality before beginning downstream analysis.</p>
+<p>Common uses for viewephys include:</p>
+<ol class="arabic simple">
+<li><p>Inspect existing recordings – Open previously acquired data to assess signal quality, investigate artifacts, and explore recordings across channels and time.</p></li>
+<li><p>Monitor live acquisitions – Visualize data as it is being recorded to quickly identify potential issues during an experiment.</p></li>
+<li><p>Visualize data from Python – Display recordings, NumPy arrays, or processed signals directly from a Python session.</p></li>
+</ol>
+<p>For step-by-step examples of these workflows, see the <a class="reference internal" href="quickstart.html"><span class="doc std std-doc">Quickstart</span></a> and <a class="reference internal" href="python-api.html"><span class="doc std std-doc">Python API</span></a> sections.</p>
+<p>By providing fast, interactive access to the underlying signals, viewephys makes it easy to understand what was recorded and identify potential issues early in the analysis workflow.</p>
+</section>
+<section id="supported-input-data">
+<h2>Supported Input Data<a class="headerlink" href="#supported-input-data" title="Link to this heading">¶</a></h2>
+<p>viewephys is designed to visualize a wide range of electrophysiology recordings and is not restricted to a specific acquisition system. It primarily works with binary (.bin) electrophysiology recordings and is commonly used with Neuropixels data. It can also visualize data stored as NumPy arrays, allowing both raw and processed signals to be inspected through the <a class="reference internal" href="python-api.html"><span class="doc std std-doc">Python API</span></a>.</p>
+<blockquote>
+<div><p><strong>Note:</strong> When available, viewephys uses SpikeGLX metadata (.meta) files to determine recording information such as channel count and sampling rate. If no metadata file is present, these parameters can be specified manually when loading data through the Python API (see Display a NumPy Array in <a class="reference internal" href="python-api.html"><span class="doc std std-doc">Python API</span></a>).</p>
+</div></blockquote>
 <p><strong>Documentation Overview</strong></p>
-<p>This documentation covers:</p>
+<p>To get started, follow the guides below:</p>
 <ul class="simple">
-<li><p>Installation</p></li>
-<li><p>Quickstart workflows</p></li>
-<li><p>Viewer navigation and display options</p></li>
-<li><p>Python API usage</p></li>
-<li><p>Troubleshooting common issues</p></li>
+<li><p><a class="reference internal" href="installation.html"><span class="doc std std-doc">Installation</span></a> – Install viewephys.</p></li>
+<li><p><a class="reference internal" href="quickstart.html"><span class="doc std std-doc">Quickstart</span></a> – Learn the basic workflow.</p></li>
+<li><p><a class="reference internal" href="viewer-guide.html"><span class="doc std std-doc">Graphical User Interface</span></a> – Explore the viewer interface.</p></li>
+<li><p><a class="reference internal" href="python-api.html"><span class="doc std std-doc">Python API</span></a> – Use viewephys from Python.</p></li>
+<li><p><a class="reference internal" href="troubleshooting.html"><span class="doc std std-doc">Troubleshooting</span></a> – Find solutions to common issues.</p></li>
 </ul>
+</section>
 </section>
 
         </article>
@@ -325,8 +314,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Introduction</a><ul>
+<li><a class="reference internal" href="#what-can-i-use-viewephys-for">What Can I Use viewephys For?</a></li>
+<li><a class="reference internal" href="#supported-input-data">Supported Input Data</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

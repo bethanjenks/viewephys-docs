@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Troubleshooting" href="troubleshooting.html"><link rel="prev" title="Viewer Guide" href="viewer-guide.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Troubleshooting" href="troubleshooting.html"><link rel="prev" title="Graphical User Interface" href="viewer-guide.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>Python API - viewephys 1.0 documentation</title>
@@ -195,7 +195,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="viewer-guide.html">Viewer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewer-guide.html">Graphical User Interface</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
@@ -238,67 +238,111 @@
         <article role="main" id="furo-main-content">
           <section id="python-api">
 <h1>Python API<a class="headerlink" href="#python-api" title="Link to this heading">¶</a></h1>
-<p>viewephys can be launched within a Python session, allowing for a more flexible workflow.</p>
-<p>This is useful when working with:</p>
+<p>viewephys can be launched directly from a Python session to visualize binary recordings, NumPy arrays, and data generated during analysis workflows.</p>
+<p>This page covers two common ways to use viewephys from Python:</p>
 <ul class="simple">
-<li><p>NumPy arrays</p></li>
-<li><p>Filtered recordings</p></li>
-<li><p>SpikeInterface outputs</p></li>
-<li><p>Custom analysis pipelines</p></li>
+<li><p>launching viewephys from an interactive Python session, such as IPython or Jupyter</p></li>
+<li><p>launching viewephys from a standalone Python script</p></li>
 </ul>
-<p>When launching viewephys from a script, you need to create the Qt application yourself.</p>
-<section id="open-a-binary-file-from-python">
-<h2>Open a Binary File from Python<a class="headerlink" href="#open-a-binary-file-from-python" title="Link to this heading">¶</a></h2>
+<section id="interactive-python-session">
+<h2>Interactive Python Session<a class="headerlink" href="#interactive-python-session" title="Link to this heading">¶</a></h2>
+<p>In an interactive Python session, viewephys can be used to display data that is already loaded in memory as a NumPy array.</p>
+<p>If you are using IPython or Jupyter, you may first need to enable the Qt event loop:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">gui</span> <span class="n">qt</span>
+</pre></div>
+</div>
+<p>Then load and display your data:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">viewephys.gui</span><span class="w"> </span><span class="kn">import</span> <span class="n">viewephys</span>
+
+<span class="n">nc</span><span class="p">,</span> <span class="n">ns</span><span class="p">,</span> <span class="n">fs</span> <span class="o">=</span> <span class="p">(</span><span class="mi">384</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">30000</span><span class="p">)</span>  <span class="c1"># channels, samples, sampling rate in Hz</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">nc</span><span class="p">,</span> <span class="n">ns</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e6</span>  <span class="c1"># example data in volts</span>
+
+<span class="n">ve</span> <span class="o">=</span> <span class="n">viewephys</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>viewephys expects array data in the shape:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">n_channels</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The sampling rate must be provided using fs, in Hz.</p>
+<section id="opening-multiple-windows">
+<h3>Opening Multiple Windows<a class="headerlink" href="#opening-multiple-windows" title="Link to this heading">¶</a></h3>
+<p>Multiple viewer windows can be opened from the same Python session. Each window must be given a different title:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ve1</span> <span class="o">=</span> <span class="n">viewephys</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;raw data&quot;</span><span class="p">)</span>
+<span class="n">ve2</span> <span class="o">=</span> <span class="n">viewephys</span><span class="p">(</span><span class="n">data</span> <span class="o">*</span> <span class="mi">50</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;scaled data&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If the same title is reused, viewephys updates the existing window instead of opening a new one.</p>
+</section>
+</section>
+<section id="launching-from-a-python-script">
+<h2>Launching from a Python Script<a class="headerlink" href="#launching-from-a-python-script" title="Link to this heading">¶</a></h2>
+<p>When using viewephys from a standalone Python script, you need to create the Qt application before opening the viewer and start the Qt event loop at the end of the script.</p>
+<section id="open-a-binary-file">
+<h3>Open a Binary File<a class="headerlink" href="#open-a-binary-file" title="Link to this heading">¶</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">EphysBinViewer</span></code> to open a binary recording file from a script.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">viewephys.gui</span><span class="w"> </span><span class="kn">import</span> <span class="n">EphysBinViewer</span><span class="p">,</span> <span class="n">create_app</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">create_app</span><span class="p">()</span>
 
-<span class="n">viewer</span> <span class="o">=</span> <span class="n">EphysBinViewer</span><span class="p">(</span><span class="s2">&quot;path/to/recording.ap.bin&quot;</span><span class="p">)</span>
+<span class="n">viewer</span> <span class="o">=</span> <span class="n">EphysBinViewer</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;path/to/recording.ap.bin&quot;</span><span class="p">))</span>
 
 <span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
 
 </pre></div>
 </div>
 </section>
-<section id="view-a-numpy-array">
-<h2>View a NumPy Array<a class="headerlink" href="#view-a-numpy-array" title="Link to this heading">¶</a></h2>
+<section id="display-a-numpy-array">
+<h3>Display a NumPy Array<a class="headerlink" href="#display-a-numpy-array" title="Link to this heading">¶</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">viewephys()</span></code> to display data that is already loaded in Python.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">viewephys.gui</span><span class="w"> </span><span class="kn">import</span> <span class="n">viewephys</span><span class="p">,</span> <span class="n">create_app</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">create_app</span><span class="p">()</span>
 
-<span class="n">nc</span><span class="p">,</span> <span class="n">ns</span><span class="p">,</span> <span class="n">fs</span> <span class="o">=</span> <span class="p">(</span><span class="mi">384</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">30000</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">nc</span><span class="p">,</span> <span class="n">ns</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e6</span>
+<span class="n">nc</span><span class="p">,</span> <span class="n">ns</span><span class="p">,</span> <span class="n">fs</span> <span class="o">=</span> <span class="p">(</span><span class="mi">384</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">30000</span><span class="p">)</span> <span class="c1"># channels, samples, sampling rate in Hz</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">nc</span><span class="p">,</span> <span class="n">ns</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e6</span> <span class="c1"># example data in volts</span>
 
-<span class="n">viewer</span> <span class="o">=</span> <span class="n">viewephys</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
-
-<span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
-
-</pre></div>
-</div>
-<section id="open-multiple-viewer-windows">
-<h3>Open Multiple Viewer Windows<a class="headerlink" href="#open-multiple-viewer-windows" title="Link to this heading">¶</a></h3>
-<p>Multiple viewer windows can be opened from the same Python session, allowing different datasets or processing stages to be compared side by side.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">viewephys.gui</span><span class="w"> </span><span class="kn">import</span> <span class="n">viewephys</span><span class="p">,</span> <span class="n">create_app</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">create_app</span><span class="p">()</span>
-
-<span class="n">nc</span><span class="p">,</span> <span class="n">ns</span><span class="p">,</span> <span class="n">fs</span> <span class="o">=</span> <span class="p">(</span><span class="mi">384</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">30000</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">nc</span><span class="p">,</span> <span class="n">ns</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e6</span>
-
-<span class="n">viewer1</span> <span class="o">=</span> <span class="n">viewephys</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
-<span class="n">viewer2</span> <span class="o">=</span> <span class="n">viewephys</span><span class="p">(</span><span class="n">data</span> <span class="o">*</span> <span class="mi">50</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Plot 2&quot;</span><span class="p">)</span>
+<span class="n">ve</span> <span class="o">=</span> <span class="n">viewephys</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
 
 <span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
-
 </pre></div>
 </div>
+</section>
+<section id="array-shape">
+<h3>Array shape<a class="headerlink" href="#array-shape" title="Link to this heading">¶</a></h3>
+<p>viewephys expects NumPy arrays to be arranged as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">n_channels</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Some tools return data in a different order. For example, SpikeInterface typically returns traces as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">n_channels</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this case, transpose the array before passing it to viewephys:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span>
+<span class="n">ve</span> <span class="o">=</span> <span class="n">viewephys</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="optional-parameters">
+<h3>Optional Parameters<a class="headerlink" href="#optional-parameters" title="Link to this heading">¶</a></h3>
+<p>The viewephys() function requires:</p>
+<ul class="simple">
+<li><p>data: a NumPy array with shape (n_channels, n_samples)</p></li>
+<li><p>fs: the sampling rate in Hz</p></li>
+</ul>
+<p>Optional parameters include:</p>
+<ul class="simple">
+<li><p>channels: channel information, such as probe geometry</p></li>
+<li><p>title: title of the viewer window</p></li>
+<li><p>t0: start-time offset</p></li>
+<li><p>colormap: colormap used for display</p></li>
+</ul>
+<p>If no channel information is provided, viewephys uses a default Neuropixels version 1 layout. For non-NP1 probes or custom recordings, you may need to provide channel information manually.</p>
 </section>
 </section>
 </section>
@@ -324,7 +368,7 @@
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Viewer Guide</div>
+                <div class="title">Graphical User Interface</div>
                 
               </div>
             </a>
@@ -359,9 +403,15 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Python API</a><ul>
-<li><a class="reference internal" href="#open-a-binary-file-from-python">Open a Binary File from Python</a></li>
-<li><a class="reference internal" href="#view-a-numpy-array">View a NumPy Array</a><ul>
-<li><a class="reference internal" href="#open-multiple-viewer-windows">Open Multiple Viewer Windows</a></li>
+<li><a class="reference internal" href="#interactive-python-session">Interactive Python Session</a><ul>
+<li><a class="reference internal" href="#opening-multiple-windows">Opening Multiple Windows</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#launching-from-a-python-script">Launching from a Python Script</a><ul>
+<li><a class="reference internal" href="#open-a-binary-file">Open a Binary File</a></li>
+<li><a class="reference internal" href="#display-a-numpy-array">Display a NumPy Array</a></li>
+<li><a class="reference internal" href="#array-shape">Array shape</a></li>
+<li><a class="reference internal" href="#optional-parameters">Optional Parameters</a></li>
 </ul>
 </li>
 </ul>

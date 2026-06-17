@@ -2,8 +2,20 @@
 
 If you encounter problems while installing or using viewephys, the following sections describe common issues and their solutions.
 
+## Support
+
+If your issue is not covered here, you can:
+
+- Search existing issues on the viewephys GitHub repository.
+- Open a new issue in the repositiory. 
+
+GitHub repository:
+[viewephys](https://github.com/int-brain-lab/viewephys)
+
+
 ## Common Issues 
-**Viewer Does Not Launch**
+
+### Viewer Does Not Launch 
 
 If `viewephys` does not start:
 
@@ -17,26 +29,7 @@ Try confirming the installation:
 viewephys --help
 ```
 
-**Command Not Found**
-
-If your terminal reports:
-
-```text
-viewephys: command not found
-```
-
-make sure:
-
-- The environment containing viewephys is activated.
-- The installation completed successfully.
-
-You can verify the installation with:
-
-```bash
-pip show viewephys
-```
-
-**File Not Found**
+### File Not Found
 
 If a recording cannot be opened:
 
@@ -44,9 +37,14 @@ If a recording cannot be opened:
 - Check that the recording file exists.
 - Ensure you have permission to access the file.
 
-**Python Viewer Does Not Appear**
+### Incorrect visualization of Data
 
-When launching viewephys from a Python script, make sure a Qt application is created before opening the viewer:
+- Verify number of channels and sampling rate
+- check the selected data view for filtering options 
+
+### Python Viewer Does Not Appear
+
+When launching viewephys from an a Python script, make sure a Qt application is created before opening the viewer:
 
 ```python
 from viewephys.gui import create_app
@@ -59,13 +57,3 @@ and that the event loop is started:
 ```python
 app.exec()
 ```
-
-## Support
-
-If your issue is not covered here, you can:
-
-- Search existing issues on the viewephys GitHub repository.
-- Open a new issue in the repositiory. 
-
-GitHub repository:
-[viewephys](https://github.com/int-brain-lab/viewephys)

@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Python API" href="python-api.html"><link rel="prev" title="Quickstart" href="quickstart.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>Viewer Guide - viewephys 1.0 documentation</title>
+        <title>Graphical User Interface - viewephys 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
@@ -195,7 +195,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Viewer Guide</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Graphical User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-api.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
@@ -236,8 +236,17 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="viewer-guide">
-<h1>Viewer Guide<a class="headerlink" href="#viewer-guide" title="Link to this heading">¶</a></h1>
+          <section id="graphical-user-interface">
+<h1>Graphical User Interface<a class="headerlink" href="#graphical-user-interface" title="Link to this heading">¶</a></h1>
+<p>You can also load a specific recording directly when launching viewephys:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys<span class="w"> </span>-f<span class="w"> </span>path/to/recording.ap.bin
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys<span class="w"> </span>-f<span class="w"> </span>examples/example_bin/1119617_LSE1_shank12_g0_t0.imec0.ap.bin
+</pre></div>
+</div>
+<p>The recording will be loaded automatically when the viewer starts.</p>
 <section id="interface-overview">
 <h2>Interface Overview<a class="headerlink" href="#interface-overview" title="Link to this heading">¶</a></h2>
 <p>The main viewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.</p>
@@ -404,7 +413,7 @@ When spike picking mode is active:</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Viewer Guide</a><ul>
+<li><a class="reference internal" href="#">Graphical User Interface</a><ul>
 <li><a class="reference internal" href="#interface-overview">Interface Overview</a></li>
 <li><a class="reference internal" href="#navigating-the-viewer">Navigating the Viewer</a><ul>
 <li><a class="reference internal" href="#navigation-controls">Navigation Controls</a></li>

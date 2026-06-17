@@ -1,5 +1,19 @@
-# Viewer Guide
+# Graphical User Interface
 
+
+You can also load a specific recording directly when launching viewephys:
+
+```bash
+viewephys -f path/to/recording.ap.bin
+```
+
+For example:
+
+```bash
+viewephys -f examples/example_bin/1119617_LSE1_shank12_g0_t0.imec0.ap.bin
+```
+
+The recording will be loaded automatically when the viewer starts.
 ## Interface Overview
 
 The main viewer window provides tools for navigating electrophysiology recordings and inspecting signal quality.

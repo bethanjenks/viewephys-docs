@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Viewer Guide" href="viewer-guide.html"><link rel="prev" title="Installation" href="installation.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Graphical User Interface" href="viewer-guide.html"><link rel="prev" title="Installation" href="installation.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>Quickstart - viewephys 1.0 documentation</title>
@@ -195,7 +195,7 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Quickstart</a></li>
-<li class="toctree-l1"><a class="reference internal" href="viewer-guide.html">Viewer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewer-guide.html">Graphical User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-api.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
@@ -238,29 +238,14 @@
         <article role="main" id="furo-main-content">
           <section id="quickstart">
 <h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">¶</a></h1>
-<p>viewephys can be used in three common workflows:</p>
-<ol class="arabic simple">
-<li><p>Open an existing recording to inspect previously acquired data.</p></li>
-<li><p>Monitor a live recording during data acquisition.</p></li>
-<li><p>Visualize recordings and processed data from Python.</p></li>
-</ol>
-<blockquote>
-<div><p><strong>Note:</strong> The first two workflows are covered in this guide. For Python-based workflows, see <a class="reference internal" href="python-api.html"><span class="doc std std-doc">Python API</span></a>.</p>
-</div></blockquote>
+<p>Once you have completed the <a class="reference internal" href="installation.html"><span class="doc std std-doc">installation</span></a>, you’re ready to start exploring your data with viewephys.</p>
+<p>This guide covers the basic workflow, from launching the viewer and loading recordings to selecting an appropriate data view and navigating through channels and time. By the end, you should be able to open a dataset and confidently inspect your signals.</p>
 <section id="open-an-existing-recording">
 <h2>Open an Existing Recording<a class="headerlink" href="#open-an-existing-recording" title="Link to this heading">¶</a></h2>
-<p>Use viewephys to explore previously acquired electrophysiology recordings.</p>
-<p>Recordings can be loaded either:</p>
-<ul class="simple">
-<li><p>From the graphical interface</p></li>
-<li><p>Directly from the command line</p></li>
-</ul>
-<section id="open-from-the-graphical-interface">
-<h3>Open from the Graphical Interface<a class="headerlink" href="#open-from-the-graphical-interface" title="Link to this heading">¶</a></h3>
 <blockquote>
 <div><p><strong>Note:</strong> If you installed viewephys in a virtual environment, ensure it is activated before running any of the commands below.</p>
 </div></blockquote>
-<p>Launch the viewer:</p>
+<p>Launch viewephys in the command line:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys
 </pre></div>
 </div>
@@ -273,23 +258,10 @@
 </ol>
 <p><img alt="viewephys open recording" src="_images/viewephys_open_recording.png" /></p>
 </section>
-<section id="open-from-the-command-line">
-<h3>Open from the Command Line<a class="headerlink" href="#open-from-the-command-line" title="Link to this heading">¶</a></h3>
-<p>You can also load a specific recording directly when launching viewephys:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys<span class="w"> </span>-f<span class="w"> </span>path/to/recording.ap.bin
-</pre></div>
-</div>
-<p>For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys<span class="w"> </span>-f<span class="w"> </span>examples/example_bin/1119617_LSE1_shank12_g0_t0.imec0.ap.bin
-</pre></div>
-</div>
-<p>The recording will be loaded automatically when the viewer starts.</p>
-</section>
-</section>
 <section id="monitor-a-live-recording">
 <h2>Monitor a Live Recording<a class="headerlink" href="#monitor-a-live-recording" title="Link to this heading">¶</a></h2>
 <p>viewephys can be used during data acquisition to monitor signal quality in real time.</p>
-<p>Launch the viewer:</p>
+<p>Launch viewephys in the command line:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>viewephys
 </pre></div>
 </div>
@@ -298,32 +270,74 @@
 <li><p>Navigate to the desired recording and select the corresponding <code class="docutils literal notranslate"><span class="pre">.bin</span></code> file.</p></li>
 </ol>
 <p><img alt="viewephys live recording" src="_images/viewephys_open_live_recording.png" /></p>
-<p>The live recording mode can be used to inspect data during acquisition.</p>
-<p>Common uses include:</p>
+</section>
+<section id="selecting-data-views">
+<h2>Selecting Data Views<a class="headerlink" href="#selecting-data-views" title="Link to this heading">¶</a></h2>
+<p>viewephys allows you to switch between different filtered representations of the same recording, depending on the signals you want to inspect.</p>
+<p><strong>Raw</strong> -
+Display the unprocessed recording. No filtering. Useful for checking the original data and identifying acquisition artefacts.</p>
+<p><strong>AP band (high-pass 300 Hz)</strong> -
+Display the high-frequency component of the recording commonly used for spike detection and analysis. This is typically the best view for inspecting neuronal spiking activity.</p>
+<p><strong>LF broadband (high-pass 2 Hz)</strong> -
+Display lower-frequency signals, including local field potentials (LFPs) and slow fluctuations in neural activity.</p>
+<p><strong>AP band Destriped</strong> -
+Display the AP band after additional preprocessing to reduce common recording artefacts and noise. This view can make spiking activity easier to inspect when recordings contain striping or correlated noise across channels.</p>
+<p><strong>Using them in the Viewer</strong></p>
+<ol class="arabic simple">
+<li><p>Open a recording.</p></li>
+<li><p>Tick one or more of the four checkboxes.</p></li>
+<li><p>For each ticked box, a data window opens, titled with the mode name, showing that processed version at the chosen time.</p></li>
+</ol>
+<p>Each window is independent.</p>
+</section>
+<section id="navigating-the-data-viewer">
+<h2>Navigating the Data Viewer<a class="headerlink" href="#navigating-the-data-viewer" title="Link to this heading">¶</a></h2>
+<p>Once your data has been loaded, the main viewer window can be used to explore signals across channels and time.</p>
 <ul class="simple">
-<li><p>Monitoring signal quality during acquisition</p></li>
-<li><p>Identifying noisy channels</p></li>
-<li><p>Verifying probe connectivity</p></li>
-<li><p>Checking recording stability</p></li>
+<li><p>The x-axis is time.</p></li>
+<li><p>The y-axis is recording channels.</p></li>
+<li><p>Signals can be viewed at different time scales and channel ranges.</p></li>
 </ul>
-<section id="filtered-data-views">
-<h3>Filtered Data Views<a class="headerlink" href="#filtered-data-views" title="Link to this heading">¶</a></h3>
-<p>viewephys allows you to select different filtered representations of the data.</p>
-<p><strong>Raw</strong>
-Display the unprocessed recording.</p>
-<p><strong>AP band (high-pass 300 Hz)</strong>
-Display the high-frequency component of the recording commonly used for spike detection and analysis.</p>
-<p><strong>LF broadband (high-pass 2 Hz)</strong>
-Display lower-frequency signals, including local field potential activity.</p>
-<p><strong>AP band Destriped</strong>
-Display the AP band after additional preprocessing to reduce recording artefacts and noise.</p>
+<p>Display style: radio buttons toggle “density” (heatmap image, default) vs. “wiggle” (individual trace lines)</p>
+<p><img alt="viewephys recording" src="_images/viewephys_recording.png" /></p>
+<section id="navigating-through-the-recording">
+<h3>Navigating Through the Recording<a class="headerlink" href="#navigating-through-the-recording" title="Link to this heading">¶</a></h3>
+<p>Use the scroll bars to move through the dataset:</p>
+<ul class="simple">
+<li><p>The horizontal scroll bar moves forward and backward in time.</p></li>
+<li><p>The vertical scroll bar moves between channel ranges.</p></li>
+</ul>
+<p><strong>Zooming</strong> -
+To zoom in and out, right-click and drag within the data viewer:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-     Drag horizontally to zoom along the time axis.
+-     Drag vertically to zoom along the channel axis.
+</pre></div>
+</div>
+<p><img alt="Zoomed-in viewer" src="_images/data_viewer_zoomed.png" /></p>
+</section>
+<section id="adjusting-signal-gain">
+<h3>Adjusting Signal Gain<a class="headerlink" href="#adjusting-signal-gain" title="Link to this heading">¶</a></h3>
+<p>The gain control can be used to increase or decrease signal visibility.</p>
+<p>Gain can be adjusted using:</p>
+<ul class="simple">
+<li><p>The gain control in the viewer</p></li>
+</ul>
+<p>Windows/linux</p>
+<ul class="simple">
+<li><p>Ctrl + A or Page Up to increase gain by 3 dB</p></li>
+<li><p>Ctrl + Z or Page Down to decrease gain by 3 dB</p></li>
+</ul>
+<p>MacOs</p>
+<ul class="simple">
+<li><p>Cmd key ⌘ + A to decrease gain by 3 dB</p></li>
+<li><p>Cmd key ⌘ + Z to increase gain by 3 dB</p></li>
+</ul>
 </section>
 <section id="next-steps">
-<h3>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">¶</a></h3>
-<p>Now that you have opened a recording, see the following guides:</p>
+<h3>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">¶</a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="viewer-guide.html"><span class="doc std std-doc">Viewer Guide</span></a> – Learn how to navigate the interface and inspect recordings.</p></li>
-<li><p><a class="reference internal" href="python-api.html"><span class="doc std std-doc">Python API</span></a> – Learn how to open recordings and visualize data from Python.</p></li>
+<li><p><a class="reference internal" href="viewer-guide.html"><span class="doc std std-doc">Graphical User Interface</span></a> - Detailed guide about the Viewer including controls and display options.</p></li>
+<li><p><a class="reference internal" href="python-api.html"><span class="doc std std-doc">Python API</span></a> – Examples for loading recordings and visualizing data from Python.</p></li>
 </ul>
 </section>
 </section>
@@ -339,7 +353,7 @@ Display the AP band after additional preprocessing to reduce recording artefacts
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Viewer Guide</div>
+                <div class="title">Graphical User Interface</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -385,14 +399,13 @@ Display the AP band after additional preprocessing to reduce recording artefacts
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Quickstart</a><ul>
-<li><a class="reference internal" href="#open-an-existing-recording">Open an Existing Recording</a><ul>
-<li><a class="reference internal" href="#open-from-the-graphical-interface">Open from the Graphical Interface</a></li>
-<li><a class="reference internal" href="#open-from-the-command-line">Open from the Command Line</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#monitor-a-live-recording">Monitor a Live Recording</a><ul>
-<li><a class="reference internal" href="#filtered-data-views">Filtered Data Views</a></li>
-<li><a class="reference internal" href="#next-steps">Next Steps</a></li>
+<li><a class="reference internal" href="#open-an-existing-recording">Open an Existing Recording</a></li>
+<li><a class="reference internal" href="#monitor-a-live-recording">Monitor a Live Recording</a></li>
+<li><a class="reference internal" href="#selecting-data-views">Selecting Data Views</a></li>
+<li><a class="reference internal" href="#navigating-the-data-viewer">Navigating the Data Viewer</a><ul>
+<li><a class="reference internal" href="#navigating-through-the-recording">Navigating Through the Recording</a></li>
+<li><a class="reference internal" href="#adjusting-signal-gain">Adjusting Signal Gain</a></li>
+<li><a class="reference internal" href="#next-steps">Next steps</a></li>
 </ul>
 </li>
 </ul>
