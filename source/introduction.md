@@ -26,14 +26,13 @@ viewephys is designed to visualize a wide range of electrophysiology recordings 
 
 > **Note:** When available, viewephys uses SpikeGLX metadata (.meta) files to determine recording information such as channel count and sampling rate. If no metadata file is present, these parameters can be specified manually when loading data through the Python API (see Loading NumPy Arrays).
 
-
 **Documentation Overview**
 
 This documentation covers:
 
 - [Installation](installation) of viewephys 
 - [Quickstart](quickstart) 
-- [GUI navigation and display options](graphicaluserinterface)
+- [GUI navigation and display options](gui)
 - [Python API](python-api) usage
 - Usage Examples 
 - [Troubleshooting](troubleshooting) common issues

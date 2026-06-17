@@ -38,27 +38,26 @@ viewephys
 
 ![viewephys live recording](images/viewephys_open_live_recording.png)
 
-### Filtered Data Views
+### Selecting Data Views
 viewephys allows you to switch between different filtered representations of the same recording, depending on the signals you want to inspect.
 
-**Raw**
+**Raw** - 
 Display the unprocessed recording. No filtering. Useful for checking the original data and identifying acquisition artefacts.  
 
-**AP band (high-pass 300 Hz)**
+**AP band (high-pass 300 Hz)** - 
 Display the high-frequency component of the recording commonly used for spike detection and analysis. This is typically the best view for inspecting neuronal spiking activity.
 
-**LF broadband (high-pass 2 Hz)**
+**LF broadband (high-pass 2 Hz)** - 
 Display lower-frequency signals, including local field potentials (LFPs) and slow fluctuations in neural activity.
 
-**AP band Destriped**
+**AP band Destriped** - 
 Display the AP band after additional preprocessing to reduce common recording artefacts and noise. This view can make spiking activity easier to inspect when recordings contain striping or correlated noise across channels.
 
-### Using them in the GUI
+**Using them in the Viewer**
 
 1. Open a recording.
 2. Tick one or more of the four checkboxes.
-3. Move the slider (or use jump-to-time). For each ticked box, a data window opens, titled
-   with the mode name, showing that processed version at the chosen time.
+3. For each ticked box, a data window opens, titled with the mode name, showing that processed version at the chosen time.
 
 Each window is independent. 
 
@@ -84,6 +83,8 @@ Use the scroll bars to move through the dataset:
     -     Right-click and drag horizontally to zoom into a specific time range
     -     Right-click and drag vertically to zoom into a specific range of channels.
 
+![Zoomedin recording](images/data_viewer_zoomed.png)
+
 ### Adjusting Signal Gain
 
 The gain control can be used to increase or decrease signal visibility.
@@ -95,6 +96,7 @@ Gain can be adjusted using:
 Windows/linux 
 - Ctrl + A or Page Up to increase gain by 3 dB
 - Ctrl + Z or Page Down to decrease gain by 3 dB
+
 MacOs 
 - Cmd + A to decrease gain by 3 dB
 - Cmd + Z to increase gain by 3 dB
