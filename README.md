@@ -8,7 +8,7 @@ https://bethanjenks.github.io/viewephys-docs/
 
 ## Build Locally
 
-Create and activate a virtual environment:
+Create a virtual environment:
 
 ```bash
 python -m venv venv
