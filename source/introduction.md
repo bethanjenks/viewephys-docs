@@ -1,35 +1,24 @@
 # Introduction
 
-viewephys is a lightweight Python tool developed by the International Brain Laboratory (IBL) for visualizing electrophysiology recordings, particularly Neuropixels data.
+viewephys is a lightweight Python viewer for electrophysiology data. Developed by the International Brain Laboratory (IBL), it provides a fast and interactive way to visualize recordings without extensive preprocessing or setup.
 
-The viewer is designed for fast, interactive exploration of neural recordings, allowing users to inspect signal quality, navigate across channels and time, and monitor recordings during acquisition.
+Designed for neuroscientists, electrophysiologists, and developers working with neural recordings, it supports common tasks such as checking signal quality, navigating across channels and time, monitoring experiments in progress, and quickly assessing newly acquired data.
 
-Unlike analysis-focused tools, viewephys focuses on rapid visualization and data inspection.
+Unlike analysis packages that focus on spike sorting or downstream processing, viewephys is primarily a visualization tool. Its purpose is to provide a direct view of the underlying signals, helping users understand their recordings and identify potential issues before further analysis.
 
-**Intended Audience**
+Use Cases
 
-viewephys is intended for users working with electrophysiology data, including:
+Electrophysiology recordings can be challenging to inspect directly. Datasets are often large, contain hundreds of channels, and may require significant processing before they can be visualized. When working with raw recordings, it is often useful to quickly assess data quality before beginning downstream analysis.
 
-- Neuroscientists
-- Electrophysiology researchers
-- Data analysts and engineers
-- Users working with Neuropixels recordings
+Common uses for viewephys include:
 
-**Use Cases** 
+* Checking signal quality immediately after a recording
+* Browsing recordings across channels and time
+* Monitoring data during acquisition
+* Investigating artifacts or noisy channels
+* Visualizing data directly from a Python session
 
-Raw electrophysiology recordings can be difficult to inspect because:
-
-- Recording files are large and complex
-- Raw voltage traces are not immediately interpretable
-- Many visualization tools require substantial setup or processing
-
-viewephys provides:
-
-- A quick way to open and visualize recordings
-- Interactive navigation through channels and time
-- Real-time monitoring of ongoing recordings
-- Immediate feedback on recording quality
-- Support for viewing data within a Python session
+By providing fast, interactive access to the underlying signals, viewephys makes it easy to understand what was recorded and identify potential issues early in the analysis workflow.
 
 **Key Features**
 
